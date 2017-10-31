@@ -1,0 +1,4 @@
+com\lumall\service\ItemService.class
+com\lumall\service\ItemDescService.class
+com\lumall\service\ItemCatService.class
+com\lumall\service\ItemParamService.class

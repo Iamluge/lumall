@@ -1,0 +1,8 @@
+package com.lumall.service;
+
+import com.lumall.common.util.E3Result;
+
+public interface ItemDescService {
+public E3Result findItemDesc(long id);
+public E3Result findItemParam(long itemId);
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="" key="DirectorySelectionPage.lastParent_https://pc-201311301552/svn/taotao-test"/>
+	<item value="174" key="CommitDialog.location.y"/>
+	<item value="275" key="CommitDialog.location.x"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="trunk" key="DirectorySelectionPage.lastParent_https://8uqpp9dbgfi3rw4:8443/svn/lumall32"/>
+	<item value="513" key="CommitDialog.size.y"/>
+	<item value="1370" key="CommitDialog.size.x"/>
+	<item value="503" key="ChooseUrlDialog.size.x"/>
+	<item value="396" key="ChooseUrlDialog.size.y"/>
+	<item value="https://8uqpp9dbgfi3rw4:8443/svn/lumall32" key="RepositorySelectionPage.lastRepository"/>
+	<item value="709" key="ChooseUrlDialog.location.x"/>
+	<item value="206" key="ChooseUrlDialog.location.y"/>
+	<section name="CommitWizard">
+		<item value="500" key="VWeight2"/>
+		<item value="500" key="VWeight1"/>
+		<item value="false" key="ShowCompare"/>
+	</section>
+	<section name="IgnoreResourcesDialog">
+		<item value="0" key="Action"/>
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://8UQPP9DBGFI3RW4:8443/svn/lumall32/"/>
+		</list>
+	</section>
+</section>

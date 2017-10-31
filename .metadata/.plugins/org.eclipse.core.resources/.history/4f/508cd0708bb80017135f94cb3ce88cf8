@@ -1,0 +1,5 @@
+package com.lumall.common.pojo;
+
+public class EasyUIDataTreeNode {
+
+}

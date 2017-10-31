@@ -1,0 +1,11 @@
+com\lumall\mapper\TbItemDescMapper.class
+com\lumall\mapper\TbOrderMapper.class
+com\lumall\mapper\TbItemParamMapper.class
+com\lumall\mapper\TbItemCatMapper.class
+com\lumall\mapper\TbContentCategoryMapper.class
+com\lumall\mapper\TbItemParamItemMapper.class
+com\lumall\mapper\TbOrderShippingMapper.class
+com\lumall\mapper\TbOrderItemMapper.class
+com\lumall\mapper\TbUserMapper.class
+com\lumall\mapper\TbItemMapper.class
+com\lumall\mapper\TbContentMapper.class

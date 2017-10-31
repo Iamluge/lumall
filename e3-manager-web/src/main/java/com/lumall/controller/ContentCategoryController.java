@@ -1,0 +1,47 @@
+package com.lumall.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.lumall.common.pojo.EasyUIDataTreeNode;
+import com.lumall.common.util.E3Result;
+import com.lumall.content.service.ContentCategoryService;
+
+@Controller
+public class ContentCategoryController {
+@Autowired
+private ContentCategoryService categoryService;
+@RequestMapping("/content/category/list")
+@ResponseBody
+public List<EasyUIDataTreeNode> findContentCategoryList(@RequestParam(value="id",defaultValue="0")Long parentid){
+	return categoryService.findContentCategoryList(parentid);
+}
+@RequestMapping("/content/category/create")
+@ResponseBody
+public E3Result createCategory(Long parentId, String name){
+	return categoryService.addContentCategory(parentId, name);
+}
+/*
+ *修改名字
+ */
+@RequestMapping("/content/category/update")
+@ResponseBody
+public E3Result renameCategory(Long id, String name){
+	return categoryService.renameCategory(id,name);
+	
+}
+/*
+ * 删除节点
+ */
+@RequestMapping("/content/category/delete/")
+@ResponseBody
+public E3Result deleteCategory(Long id){
+	return categoryService.deleteCategory(id);
+}
+
+}

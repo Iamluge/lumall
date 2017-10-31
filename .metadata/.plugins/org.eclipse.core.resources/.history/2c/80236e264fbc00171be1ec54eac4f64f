@@ -1,0 +1,19 @@
+package com.lumall.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.lumall.common.pojo.EasyUIDataTreeNode;
+import com.lumall.content.service.ContentCategoryService;
+
+@Controller
+public class ContentCategoryController {
+@Autowired
+private ContentCategoryService categoryService;
+public List<EasyUIDataTreeNode> findContentCategoryList(Long parentid){
+	return categoryService.findContentCategoryList(parentid);
+}
+
+}

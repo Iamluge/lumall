@@ -1,0 +1,18 @@
+package com.lumall.controller;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class FileController {
+@Value("@{IMAGE_SERVER_ADDRESS}")
+private String IMAGE_SERVER_ADDRESS;
+@RequestMapping("")
+@ResponseBody
+public String imageUpload(){
+	
+	return "";
+}
+}

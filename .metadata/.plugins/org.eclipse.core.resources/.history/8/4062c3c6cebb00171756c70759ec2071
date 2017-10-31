@@ -1,0 +1,7 @@
+package com.lumall.service.impl;
+
+import com.lumall.service.ItemParamService;
+
+public class ItemParamServiceImpl implements ItemParamService{
+
+}

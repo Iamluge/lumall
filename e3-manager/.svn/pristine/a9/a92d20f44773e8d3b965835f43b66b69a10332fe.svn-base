@@ -1,0 +1,42 @@
+package com.lumall.service.impl;
+
+import java.util.List;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lumall.mapper.TbItemMapper;
+
+import com.lumall.pojo.TbItem;
+import com.lumall.pojo.TbItemExample;
+import com.lumall.pojo.TbItemExample.Criteria;
+import com.lumall.service.ItemService;
+
+	
+	@Service
+	public class ItemServiceImpl implements ItemService {
+
+		@Autowired
+		private TbItemMapper itemMapper;
+		
+	
+	
+
+		@Override
+		public TbItem tbItem(long itemid) {
+			//根据主键查询
+			TbItem tbItem = itemMapper.selectByPrimaryKey(itemid);
+			///TbItemExample example = new TbItemExample();
+			//Criterion criteria = example.createCriteria();
+			//设置查询条件
+			//criteria.andIdEqualTo(itemid);
+			//执行查询
+		//	List<TbItem> list = itemMapper.selectByExample(example);
+			//if (list != null && list.size() > 0) {
+			//	return list.get(0);
+			//}
+			return tbItem;
+		}
+
+}

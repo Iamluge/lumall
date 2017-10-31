@@ -1,0 +1,26 @@
+package com.lumall.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lumall.common.pojo.EasyUIDataTreeNode;
+import com.lumall.mapper.TbItemCatMapper;
+import com.lumall.pojo.TbContentCategoryExample.Criteria;
+import com.lumall.pojo.TbItemCatExample;
+import com.lumall.service.ItemCatService;
+@Service
+public class ItemCatServiceImpl implements ItemCatService{
+
+	@Autowired
+	private TbItemCatMapper ItemCatService;
+	@Override
+	public List<EasyUIDataTreeNode> getItemByParentId(long parentid) {
+		
+		TbItemCatExample example=new TbItemCatExample();
+	Criteria criteria=example.createCriteria();
+		return null;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.lumall.service;
+
+public interface ItemCatService {
+
+}

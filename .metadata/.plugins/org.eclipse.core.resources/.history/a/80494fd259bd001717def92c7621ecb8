@@ -1,0 +1,5 @@
+package com.lumall.content.service;
+
+public interface ContentService {
+
+}

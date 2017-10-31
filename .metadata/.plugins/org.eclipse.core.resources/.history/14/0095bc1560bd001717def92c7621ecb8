@@ -1,0 +1,7 @@
+package com.lumall.content.service;
+
+import com.lumall.common.pojo.EasyUIDataGridResult;
+
+public interface ContentService {
+public EasyUIDataGridResult findContentList(Integer page, Integer rows);
+}

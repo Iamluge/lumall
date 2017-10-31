@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <uri name="http://www.springframework.org/schema/aop/spring-aop-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-aop-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/beans/spring-beans-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-beans-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/context/spring-context-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-context-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/jms/spring-jms-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-jms-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-mvc-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/tool/spring-tool-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-tool-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/tx/spring-tx-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-tx-4.2.xsd"/>
+  <uri name="http://www.springframework.org/schema/util/spring-util-4.2.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/spring约束/spring-util-4.2.xsd"/>
+  <uri name="http://code.alibabatech.com/schema/dubbo/dubbo.xsd" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/dubbo/dubbo.xsd"/>
+  <public publicId="-//mybatis.org//DTD Mapper 3.0//EN" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/mybatis/mybatis3-dtd/mybatis-3-mapper.dtd"/>
+  <public publicId="-//mybatis.org//DTD Config 3.0//EN" uri="file:///D:/传智播客/01.课程/05.电商项目/01.教案-2.1/01.参考资料/mybatis/mybatis3-dtd/mybatis-3-config.dtd"/>
+</catalog>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;jsp&apos;&#x0D;&#x0A;- Original project: &apos;taotao-portal-web&apos;&#x0D;&#x0A;- Destination element: &apos;jsp&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     my-info-img.jsp&#x0D;&#x0A;     my-info-more.jsp&#x0D;&#x0A;     my-orders.jsp&#x0D;&#x0A;     my-info.jsp&#x0D;&#x0A;     my-order-comment.jsp" description="Copy files" element1="src/main/webapp/my-info-img.jsp" element2="src/main/webapp/my-info-more.jsp" element3="src/main/webapp/my-orders.jsp" element4="src/main/webapp/my-info.jsp" element5="src/main/webapp/my-order-comment.jsp" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1463487501654" target="/taotao-home-web/src/main/webapp/WEB-INF/jsp" units="0" version="1.0"/>
+</session>

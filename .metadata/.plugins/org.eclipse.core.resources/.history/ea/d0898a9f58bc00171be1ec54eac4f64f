@@ -1,0 +1,38 @@
+package com.lumall.content.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.lumall.common.pojo.EasyUIDataTreeNode;
+import com.lumall.content.service.ContentCategoryService;
+import com.lumall.mapper.TbContentCategoryMapper;
+import com.lumall.pojo.TbContentCategory;
+import com.lumall.pojo.TbContentCategoryExample;
+import com.lumall.pojo.TbItemCat;
+
+@Service
+public class ContentCategoryServiceImpl implements ContentCategoryService{
+
+	@Autowired
+	private TbContentCategoryMapper contentCategoryMapper;
+	@Override
+	public List<EasyUIDataTreeNode> findContentCategoryList(long parentid) {
+		TbContentCategoryExample categoryExample=new TbContentCategoryExample();
+		categoryExample.createCriteria().andParentIdEqualTo(parentid);
+		List<TbContentCategory> list=contentCategoryMapper.selectByExample(categoryExample);
+		List<EasyUIDataTreeNode> result=new ArrayList<>();
+	    for(TbContentCategory category:list)
+	     {
+	    	EasyUIDataTreeNode node=new EasyUIDataTreeNode();
+	    	node.setId(category.getId());
+	    	node.setText(category.getName());
+	    	node.setState(category.getIsParent()?"closed":"open");
+	    	result.add(node);
+	     }
+		return result;
+	}
+
+}
