@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+
+		<mapping class="org.jyu.apts.core.model.Processor" />
+		<mapping class="org.jyu.apts.core.model.ProcessorInfo" />
+		<mapping class="org.jyu.apts.core.model.Product" />
+		<mapping class="org.jyu.apts.core.model.ProductCode" />
+		<mapping class="org.jyu.apts.core.model.ProductCodePack" />
+		<mapping class="org.jyu.apts.core.model.ProductInfo" />
+		<mapping class="org.jyu.apts.core.model.ResourceUrl" />
+		<mapping class="org.jyu.apts.core.model.ProcessorCategory" />
+		<mapping class="org.jyu.apts.core.model.ProductCategory" />
+		<mapping class="org.jyu.apts.core.model.ProCgProductCg" />
+		<mapping class="org.jyu.apts.core.model.ProInfoIndex" />
+		<mapping class="org.jyu.apts.core.model.IndexValue" />
+		<mapping class="org.jyu.apts.core.model.ProInfoTemplate" />
+		<mapping class="org.jyu.apts.core.model.ProCodeTemplate" />
+		<mapping class="org.jyu.apts.core.model.Material" />
+		<mapping class="org.jyu.apts.core.model.Camera" />
+		<mapping class="org.jyu.apts.core.model.ProductionPlan" />
+		<mapping class="org.jyu.apts.core.model.ProductionPlanMaterial" />
+		<mapping class="org.jyu.apts.core.model.ProductPlanProcessor" />
+
+		<mapping class="org.jyu.apts.system.model.Company" />
+		<mapping class="org.jyu.apts.system.model.SysUser" />
+		<mapping class="org.jyu.apts.system.model.SysPower" />
+		<mapping class="org.jyu.apts.system.model.SysRole" />
+		<mapping class="org.jyu.apts.system.model.UserRole" />
+		<mapping class="org.jyu.apts.system.model.RolePower" />
+
+	</session-factory>
+
+</hibernate-configuration>

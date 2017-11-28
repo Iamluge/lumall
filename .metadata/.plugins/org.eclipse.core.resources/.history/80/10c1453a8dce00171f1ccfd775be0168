@@ -1,0 +1,5 @@
+package com.lumall.order.service;
+
+public interface OrderService {
+
+}

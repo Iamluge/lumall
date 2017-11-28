@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<bean id="authIntercept" class="org.jyu.apts.cxf.intercept.AuthIntercept">
+		<property name="uId" value="aptsuser" />
+		<property name="uPassword" value="user601" />
+	</bean>
+
+	<!--<jaxws:endpoint id="NetWebService" address="/NetWebService" implementor="org.jyu.apts.webservice.impl.NetWebServiceImpl"> 
+		<jaxws:inInterceptors> <ref bean="authIntercept"/> </jaxws:inInterceptors> 
+		</jaxws:endpoint> -->
+
+
+</beans>

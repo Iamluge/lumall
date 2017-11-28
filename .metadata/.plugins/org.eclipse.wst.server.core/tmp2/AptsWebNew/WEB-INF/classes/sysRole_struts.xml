@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="sysRole" namespace="/sysRole" extends="mypackage">
+		
+		<action name="findRoleByAdmin" class="roleAction"
+			method="findRoleByAdmin">
+			<result type="json">
+				<param name="root">sysRoleList</param>
+			</result>
+		</action>
+	
+		
+		<action name="findSysRoleByUserId" class="roleAction"
+			method="findSysRoleByUserId">
+			<result type="json">
+				<param name="root">sysRoleList</param>
+			</result>
+		</action>
+		
+		<action name="findRoleByCompanyId" class="roleAction"
+			method="findRoleByCompanyId">
+			<result type="json">
+				<param name="root">sysRoleList</param>
+			</result>
+		</action>
+		
+		<action name="addRoleByCompany" class="roleAction"
+			method="addRoleByCompany">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="editSysRole" class="roleAction"
+			method="editSysRole">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+				
+		<action name="addSysRole" class="roleAction"
+			method="addSysRole">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteSysRole" class="roleAction"
+			method="deleteSysRole">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="addRoleToUser" class="roleAction"
+			method="addRoleToUser">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteRoleToUser" class="roleAction"
+			method="deleteRoleToUser">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="sysUserHasCompanyAdmin" class="roleAction"
+			method="sysUserHasCompanyAdmin">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>

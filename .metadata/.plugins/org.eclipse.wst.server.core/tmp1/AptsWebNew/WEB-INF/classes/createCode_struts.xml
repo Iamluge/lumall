@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="createCode" namespace="/createCode" extends="mypackage">
+
+
+		<action name="updateTDCodeTem" class="createCodeAction" method="updateTDCodeTem">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+		<action name="createTDCode" class="createCodeAction" method="createTDCode">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+
+		<action name="downloadTDCode" class="createCodeAction">
+			<result type="stream">
+				<param name="contentType">application/zip</param>
+				<param name="inputName">downloadCode</param>
+				<param name="contentDisposition">attachment;filename="codeszip.zip"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="downloadSelectTDCode" class="createCodeAction">
+			<result type="stream">
+				<param name="contentType">application/zip</param>
+				<param name="inputName">downloadSelectCode</param>
+				<param name="contentDisposition">attachment;filename="codeszip.zip"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+		</action>
+
+		<action name="createTDCodeTem" class="createCodeAction" method="createTDCodeTem">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+		<action name="findCodeTemplateByCompanyId" class="createCodeAction"
+			method="findCodeTemplateByCompanyId">
+			<result type="json">
+				<param name="root">templateList</param>
+			</result>
+		</action>
+
+		<action name="deleteTDCodeTem" class="createCodeAction" method="deleteTDCodeTem">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+		<action name="getCodeImages" class="createCodeAction" method="getCodeImages">
+			<result type="json">
+				<param name="root">codeImageList</param>
+			</result>
+		</action>
+
+
+	</package>
+
+</struts>

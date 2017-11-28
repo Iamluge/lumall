@@ -1,0 +1,131 @@
+<meta charset="UTF-8">
+<div id="container">
+	<div class="row">
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<strong style="font-size: 19px;"><i class="icon-list"></i>
+					流程管理</strong>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<strong><i class="icon-list"></i> 所有流程</strong><br />
+			<!-- 所有流程列表 -->
+			<table id="comapany_processorStore_Table" style="table-layout: fixed"
+				class="table table-hover table-bordered table-responsive">
+				<a type="button" class="btn btn-warning" data-toggle="modal"
+					data-target="#addProcessor" onclick="ProcessorCleanForm()">增加流程类型</a>&nbsp;
+				<a type="button" class="btn btn-info" onclick="activeProcessor()">激活/批量激化流程</a>&nbsp;
+				<a type="button" class="btn btn-danger" onclick="logoutProcessor()">注销/批量注销流程</a>&nbsp;
+				<a type="button" class="btn btn-danger" onclick="deleteProcessor()">删除/批量删除流程</a>
+			</table>
+		</div>
+		<br />
+		<div class="col-md-12">
+			<div class="col-md-6">
+				<strong><i class="icon-list"></i> 产品列表</strong><br /> <a
+					type="button" class="btn btn-warning" onclick="settingProcessor()">为产品添加流程</a>
+				<table id="comapany_productStore_Table"
+					class="table table-hover table-bordered table-responsive">
+					<tr class="active">
+						<th><input type="checkbox" name="code" onclick="checkAll()"
+							id="cameraCheck" /></th>
+						<th>产品名称</th>
+						<th>详细描述</th>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-6" id="div_product_comapanyName">
+				<div id="strong_div">
+					<strong><i class="icon-list"></i>[]已设置的流程</strong>
+				</div>
+				<button type="button" class="btn btn-danger"
+					onclick="deleteProcessorToProduct()">删除流程</button>
+				<table id="product_table"
+					class="table table-hover table-bordered table-responsive">
+					<tr class="active">
+						<th><input type="checkbox" name="code" onclick="checkAll()"
+							id="cameraCheck" /></th>
+						<th>流程名称</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- 增加流程弹出框 -->
+	<div class="modal fade" id="addProcessor" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i> 添加流程类型</strong>
+				</div>
+				<form id="addProcessor_form" class="form-horizontal">
+					<table class="table table-hover table-bordered table-responsive"
+						id="addProcessor_table">
+						<tr>
+							<th><label class="col-sm-3 control-label">流程信息：</label></th>
+						</tr>
+						<tr>
+							<th>流程名称：<input type="text" class="form-control"
+								name="categoryName" placeholder="请输入流程的名称" /></th>
+						</tr>
+						<tr>
+							<th>详细描述：<input type="text" class="form-control"
+								name="categoryDescription" placeholder="请输入流程的详细描述" /></th>
+						</tr>
+					</table>
+					<div style="text-align: right;">
+						<a class="btn btn-info btn-xs" onclick="addProcessor()">提交</a>
+						<button class="btn btn-info btn-xs" type="reset">重置</button>
+						<button class="btn btn-info btn-xs" data-dismiss="modal">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 修改流程弹出框 -->
+	<div class="modal fade" id="editProcessor" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i> 修改流程类型</strong>
+				</div>
+				<form id="editProcessor_form" class="form-horizontal">
+					<table class="table table-hover table-bordered table-responsive"
+						id="editProcessor_table">
+						<tr>
+							<th><label class="col-sm-3 control-label">流程信息：</label></th>
+						</tr>
+					</table>
+					<div style="text-align: right;">
+						<a class="btn btn-info btn-xs" onclick="editProcessor()">提交</a>
+						<button class="btn btn-info btn-xs" type="reset">重置</button>
+						<button class="btn btn-info btn-xs" data-dismiss="modal">取消</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 查看流程弹出框 -->
+	<div class="modal fade" id="seeProcessor" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i> 流程类型</strong>
+				</div>
+				<table class="table table-hover table-bordered table-responsive"
+					id="seeProcessor_table">
+					<tr>
+						<th><label class="col-sm-3 control-label">流程信息：</label></th>
+					</tr>
+				</table>
+				<div style="text-align: right;">
+					<a class="btn btn-info btn-xs" onclick="closed()">确定</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

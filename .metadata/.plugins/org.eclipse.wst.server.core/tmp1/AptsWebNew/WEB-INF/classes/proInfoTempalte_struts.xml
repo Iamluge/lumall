@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="proInfoTemplate" namespace="/proInfoTemplate" extends="mypackage">
+		
+		<action name="AddTemplate" class="proInfoTemplateAction"
+			method="AddTemplate">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteProInfoTemplate" class="proInfoTemplateAction"
+			method="deleteProInfoTemplate">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findProInfoTemplateByProdId" class="proInfoTemplateAction"
+			method="findProInfoTemplateByProdId">
+			<result type="json">
+				<param name="root">proInfoTemplateList</param>
+			</result>
+		</action>
+		
+		<action name="findProInfoTemplateByProInfoId" class="proInfoTemplateAction"
+			method="findProInfoTemplateByProInfoId">
+			<result type="json">
+				<param name="root">proInfoTemplateList</param>
+			</result>
+		</action>
+		
+		
+	</package>
+
+</struts>

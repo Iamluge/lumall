@@ -1,0 +1,221 @@
+<meta charset="utf-8">
+<div id="container">
+	<div class="row">
+		<div class="col-md-2">
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading">
+					<strong style="font-size: 19px;"><i class="icon-list"></i>
+						产品列表</strong>
+				</div>
+				<table class="table table-hover table-bordered table-responsive"
+					id="productTable">
+					<tr class="active" style="text-align: center;">
+						<th style="text-align: center;">产品名称</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="col-md-10">
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading">
+					<strong style="font-size: 19px;"><i class="icon-list"></i>
+						材料列表</strong>
+				</div>
+				<table class="table table-hover table-bordered table-responsive"
+					id="productPlan">
+					<tr>
+						<button class="btn btn-success" type="button"
+							id='addProductPlanBtn' onclick='addPlanPre(this)'>添加计划</button>
+					</tr>
+					<tr class="active">
+						<th style="text-align: center;">生产计划名称</th>
+						<th style="text-align: center;">开始生产时间</th>
+						<th style="text-align: center;">预计结束时间</th>
+						<th style="text-align: center;">实际结束时间</th>
+						<th style="text-align: center;">数量</th>
+						<th style="text-align: center;">计划描述</th>
+						<th style="text-align: center;">操作</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<!-- 修改生产计划 -->
+	<div class="modal fade" id="editProductPlanPanel" tabindex="-1"
+		aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i> 生产计划信息</strong>
+				</div>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">计划名称：</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="editProductPlanName">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">生产数量：</label>
+						<div class="col-sm-9">
+							<input type="number" class="form-control" min="1"
+								id="editProductPlanNum">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">开始生产时间：</label>
+						<div class="col-sm-9">
+							<input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"
+								id="editStartTime" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">预计结束时间：</label>
+						<div class="col-sm-9">
+							<input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"
+								id="editPredictEndTime" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">实际结束时间：</label>
+						<div class="col-sm-9">
+							<input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"
+								id="editActualEndTime" />
+						</div>
+					</div>
+					<div class="form-group" id="costPanel">
+						<label class="col-sm-3 control-label">计划备注：</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control"
+								id="editProductPlanContents">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<a class="btn btn-warning" id="editProductPlan"
+								onclick="editPlan(this)">修改</a>
+							<button class="btn btn-info" type="reset">重置</button>
+							<button class="btn btn-info" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 修改生产计划-->
+
+
+	<!-- 添加生产计划 -->
+	<div class="modal fade" id="addProductPlanPanel" tabindex="-1"
+		aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i> 生产计划信息</strong>
+				</div>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">产品名称：</label>
+						<div class="col-sm-9">
+							<input type="text" id="productName" disabled="disabled" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">计划名称：</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="productPlanName">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">生产数量：</label>
+						<div class="col-sm-9">
+							<input type="number" class="form-control" min="1"
+								id="productPlanNum">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">开始生产时间：</label>
+						<div class="col-sm-9">
+							<input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"
+								id="startTime" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">预计结束时间：</label>
+						<div class="col-sm-9">
+							<input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"
+								id="predictEndTime" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-3 control-label">实际结束时间：</label>
+						<div class="col-sm-9">
+							<input onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"
+								id="actualEndTime" />
+						</div>
+					</div>
+					<div class="form-group" id="costPanel">
+						<label class="col-sm-3 control-label">计划备注：</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="productPlanContents">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<button class="btn btn-info" id="addProductPlan"
+								onclick="addPlan(this)">添加</button>
+							<button class="btn btn-info" type="reset">重置</button>
+							<button class="btn btn-info" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 添加生产计划-->
+
+	<!-- 为计划流程选择材料 -->
+	<div class="modal fade" id="addProductionMaterial" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 1000px;">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong><i class="icon-info"></i> 流程</strong>
+						</div>
+						<table class="table table-hover table-bordered table-responsive"
+							id="processorTable">
+							<tr class="active">
+								<th style="text-align: center;">流程名称</th>
+							</tr>
+
+						</table>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong id="materTitle"><i class="icon-info"></i> 材料</strong>
+						</div>
+						<table class="table table-hover table-bordered table-responsive"
+							id="materTable">
+							<tr class="active">
+								<th style="text-align: center;">材料编号</th>
+								<th style="text-align: center;">材料名称</th>
+							</tr>
+						</table>
+						<button class="btn btn-info" id="saveMaterialBtn"
+							onclick="saveMaterial(this)">保存</button>
+						<button class="btn btn-info" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 为计划流程选择材料-->
+</div>

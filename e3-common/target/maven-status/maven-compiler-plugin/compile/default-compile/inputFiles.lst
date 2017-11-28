@@ -1,6 +1,16 @@
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\jedis\JedisClient.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\CookieUtils.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\OSSClientConstants.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\jedis\JedisClientPool.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\UploadUtils.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\pojo\SearchItem.java
 D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\JsonUtils.java
 D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\pojo\EasyUIDataGridResult.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\OSSUtil.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\AliyunOSSClientUtil.java
 D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\IDUtils.java
 D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\E3Result.java
 D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\util\FastDFSClient.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\pojo\SearchResult.java
 D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\pojo\EasyUIDataTreeNode.java
+D:\javaee32\template-mars2\e3-common\src\main\java\com\lumall\common\jedis\JedisClientCluster.java

@@ -1,0 +1,101 @@
+package com.lumall.cart.service.impl;
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.lumall.cart.service.CartService;
+import com.lumall.common.jedis.JedisClient;
+import com.lumall.common.util.E3Result;
+import com.lumall.common.util.JsonUtils;
+import com.lumall.mapper.TbItemMapper;
+import com.lumall.pojo.TbItem;
+@Service
+public class CartServiceImpl implements CartService {
+	@Autowired
+	private JedisClient jedisClient;
+
+	@Value("${CART_ITEM_PRE}")
+	private String CART_ITEM_PRE;
+	@Autowired
+	private TbItemMapper itemMapper;
+
+	@Override
+	public E3Result addCart(long userId, long itemId, int num) {
+		boolean hexist = jedisClient.hexists(CART_ITEM_PRE + ":" + userId, itemId + "");
+		/*
+		 * 如果商品存在购物中，加上
+		 */
+		if (hexist) {
+			String json = jedisClient.hget(CART_ITEM_PRE + ":" + userId, itemId + "");
+			TbItem item = JsonUtils.jsonToPojo(json, TbItem.class);
+			item.setNum(item.getNum() + num);
+			jedisClient.hset(CART_ITEM_PRE + ":" + userId, itemId + "", JsonUtils.objectToJson(item));
+			return E3Result.ok();
+		}
+		// 如果购物车中没有，查出商品信息加入redis
+		TbItem tbItem = itemMapper.selectByPrimaryKey(itemId);
+		tbItem.setNum(num);
+		// 因为数据库中存的是image URL列表所以要取出一张
+		String image = tbItem.getImage();
+		tbItem.setImage(image.split(",")[0]);
+		jedisClient.hset(CART_ITEM_PRE + ":" + userId, itemId + "", JsonUtils.objectToJson(tbItem));
+
+		return E3Result.ok();
+	}
+
+	@Override
+	public E3Result mergeCart(long userId, List<TbItem> itemList) {
+		// 遍历商品列表
+		// 把列表添加到购物车。
+		// 判断购物车中是否有此商品
+		// 如果有，数量相加
+		// 如果没有添加新的商品
+		for (TbItem item : itemList) {
+			this.addCart(userId, item.getId(), item.getNum());
+		}
+		return E3Result.ok();
+	}
+
+	@Override
+	public List<TbItem> getCartList(long userId) {
+		List<String> list = jedisClient.hvals(CART_ITEM_PRE + ":" + userId);
+		List<TbItem> cartList = new ArrayList<>();
+		for (String string : list) {
+			cartList.add(JsonUtils.jsonToPojo(string, TbItem.class));
+		}
+		return cartList;
+	}
+
+	@Override
+	public E3Result updateCartNum(long userId, long itemId, int num) {
+
+		String json = jedisClient.hget(CART_ITEM_PRE + ":" + userId, itemId + "");
+		TbItem item = JsonUtils.jsonToPojo(json, TbItem.class);
+		item.setNum(num);
+		jedisClient.hset(CART_ITEM_PRE + ":" + userId, itemId + "", JsonUtils.objectToJson(item));
+		return E3Result.ok();
+	}
+
+	@Override
+	public E3Result deleteCartItem(long userId, long itemId) {
+
+		jedisClient.hdel(CART_ITEM_PRE + ":" + userId, itemId + "");
+		return E3Result.ok();
+	}
+
+	/*
+	 * 清空购物车
+	 */
+	@Override
+	public E3Result clearCartItem(long userId) {
+		this.getCartList(userId);
+		jedisClient.del(CART_ITEM_PRE + ":" + userId);
+		return null;
+	}
+
+}

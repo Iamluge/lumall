@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="index" namespace="/index" extends="mypackage">
+
+		<action name="top" class="indexAction" method="top">
+			<result name="top">/integrity/top.jsp</result>
+		</action>
+		
+		<action name="main" class="indexAction" method="main">
+			<result name="main">/newpage/company.jsp</result>
+			<result name="error">/integrity/error.jsp</result>
+		</action>
+		
+		<action name="nouth" class="indexAction" method="nouth">
+			<result name="nouth">/integrity/nouth.jsp</result>
+		</action>
+		
+		<action name="formset" class="indexAction" method="formset">
+			<result name="formset">/integrity/formset.jsp</result>
+		</action>
+		
+		<action name="introduction" class="indexAction" method="introduction">
+			<result name="introduction">/integrity/second/introduction.jsp</result>
+			<result name="error">/integrity/error.jsp</result>
+		</action>
+		
+		<action name="traceability" class="indexAction" method="traceability">
+			<result name="traceability">/integrity/second/traceability.jsp</result>
+			<result name="error">/integrity/error.jsp</result>
+		</action>
+		
+		<action name="product" class="indexAction" method="product">
+			<result name="product">/integrity/second/product.jsp</result>
+			<result name="error">/integrity/error.jsp</result>
+		</action>
+		
+		<action name="commitment" class="indexAction" method="commitment">
+			<result name="commitment">/integrity/second/commitment.jsp</result>
+			<result name="error">/integrity/error.jsp</result>
+		</action>
+		
+		<action name="findProInfoTemValue" class="indexAction" method="findProInfoTemValue">
+			<result name="success">../jsp/customInfo.jsp</result>
+		</action>
+		
+		<action name="introduction2" class="indexAction" method="introduction2">
+			<result name="introduction2">/integrity/second/introduction2.jsp</result>
+		</action>
+		
+		<action name="product2" class="indexAction" method="product2">
+			<result name="product2">/integrity/second/product2.jsp</result>
+		</action>
+		
+		<action name="commitment2" class="indexAction" method="commitment2">
+			<result name="commitment2">/integrity/second/commitment2.jsp</result>
+		</action>
+		
+	</package>
+
+</struts>

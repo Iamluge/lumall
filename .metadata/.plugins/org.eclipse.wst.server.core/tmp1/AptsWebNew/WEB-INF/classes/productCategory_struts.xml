@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="productCategory" namespace="/productCategory" extends="mypackage">
+		
+		<action name="findProductCategoryById" class="productCategoryAction"
+			method="findProductCategoryById">
+			<result type="json">
+				<param name="root">proCategory</param>
+			</result>
+		</action>
+		
+		<action name="findProductCategoryByCompanyId" class="productCategoryAction"
+			method="findProductCategoryByCompanyId">
+			<result type="json">
+				<param name="root">proCategoryList</param>
+			</result>
+		</action>
+		
+		<action name="findUserHasProdCategoryPower" class="productCategoryAction"
+			method="findUserHasProdCategoryPower">
+			<result type="json">
+				<param name="root">proCategoryList</param>
+			</result>
+		</action>
+		
+		<action name="addProductCategoryToCompany" class="productCategoryAction"
+			method="addProductCategoryToCompany">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+	   <action name="editProductCategory" class="productCategoryAction"
+			method="editProductCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteProductCategory" class="productCategoryAction"
+			method="deleteProductCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="settingProcessorCategroy" class="productCategoryAction"
+			method="settingProcessorCategroy">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteProcessorToProduct" class="productCategoryAction"
+			method="deleteProcessorToProduct">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="publishProductCategory" class="productCategoryAction"
+			method="publishProductCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="editProductCategory" class="productCategoryAction"
+			method="editProductCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="setProdCategorySession" class="productCategoryAction"
+			method="setProdCategorySession">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+	</package>
+
+</struts>

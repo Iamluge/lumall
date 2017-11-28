@@ -1,0 +1,11 @@
+{
+"list":[
+        {"indexTypeId":"textfield", "typeName":"文本"},
+        {"indexTypeId":"datefield", "typeName":"日期"},
+        {"indexTypeId":"yesOrNo", "typeName":"是/否"},
+        {"indexTypeId":"numberfield", "typeName":"数字"},
+        {"indexTypeId":"isEligible", "typeName":"合格/不合格"},
+        {"indexTypeId":"timefield", "typeName":"时间"},
+        {"indexTypeId":"datetimefield", "typeName":"日期时间"}
+     ]
+}

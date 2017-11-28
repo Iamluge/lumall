@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="692" key="DIALOG_X_ORIGIN"/>
+		<item value="365" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="rename" key="selection"/>
+		<item value="http" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="rename"/>
-			<item value="insert"/>
-			<item value="&quot;"/>
-			<item value="itemList"/>
-			<item value="load"/>
-			<item value="itemEditWindow"/>
-			<item value="#itemEditWindow"/>
-			<item value="\"/>
+			<item value="http"/>
+			<item value="httpc"/>
+			<item value="httpclient"/>
+			<item value="commons-httpclient"/>
+			<item value="img"/>
+			<item value="轮播图"/>
+			<item value="inclu"/>
+			<item value="payment"/>
 		</list>
 		<list key="replacehistory">
-			<item value="&apos;"/>
+			<item value="e3-order"/>
 			<item value="/"/>
+			<item value="e3-item-web"/>
+			<item value="&apos;"/>
 			<item value=""/>
 			<item value="入云龙"/>
 			<item value="taotao-home-web"/>
@@ -29,7 +35,7 @@
 		<item value="325" key="DIALOG_WIDTH"/>
 		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="442" key="DIALOG_HEIGHT"/>
-		<item value="208" key="DIALOG_Y_ORIGIN"/>
-		<item value="1213" key="DIALOG_X_ORIGIN"/>
+		<item value="266" key="DIALOG_Y_ORIGIN"/>
+		<item value="1517" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

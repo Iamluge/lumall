@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="false" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="false" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="D:\javaee32\war\e3-content.war"/>
+		<item value="D:\javaee32\war\e3-manager-web.war"/>
+		<item value="D:\javaee32\war\e3-manager.war"/>
+		<item value="D:\javaee32\war\e3-portal-web.war"/>
+		<item value="D:\javaee32\war\e3-search-web.war"/>
+		<item value="D:\javaee32\war\e3-content-service.war"/>
+	</list>
+</section>

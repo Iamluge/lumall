@@ -1,0 +1,151 @@
+<meta charset="utf-8">
+<!--
+                	描述：container
+                -->
+<div id="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading">
+					<strong style="font-size: 19px;"><i class="icon-list"></i>
+						摄像头列表</strong>
+				</div>
+				<table id="cameraTable" class="table table-hover table-bordered table-responsive" >
+					<tr align="center">
+						<button type="button" class="btn btn-warning" data-toggle="modal"
+							data-target="#addCamera">添加摄像头</button>&nbsp;&nbsp;
+						<button class="btn btn-danger" onclick="deleteCamera()">批量删除摄像头</button>
+					</tr>
+					<tr class="active" align="center">
+						<th style="text-align:center;"><input type="checkbox"  onclick="checkAll()"
+							id="checkBoss" /></th>
+						<th style="text-align:center;">名称</th>
+						<th style="text-align:center;">位置</th>
+						<th style="text-align:center;">ip</th>
+						<th style="text-align:center;">端口</th>
+						<th style="text-align:center;">操作</th>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+
+	
+         <!--   描述：添加摄像头-->
+		<div class="modal fade" id="addCamera" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-camera"></i> 摄像头信息</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">名称：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">位置：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="position">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">ip：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="ip">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">端口：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="port">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">用户名：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="userName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">密码：</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="password">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button class="btn btn-info" data-dismiss="modal" onclick="addCamera()">添加</button>
+								<button class="btn btn-info" type="reset">重置</button>
+								<button class="btn btn-info" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		 <!--   描述：添加摄像头-->
+          
+          <!-- 	描述：修改摄像头 -->
+		<div class="modal fade" id="editCamera" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-camera"></i> 摄像头信息</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">名称：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">位置：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editPosition">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">ip：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editIp">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">端口：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editPort">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">用户名：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editUserName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">密码：</label>
+							<div class="col-sm-9">
+								<input type="password" class="form-control" id="editPassword">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button class="btn btn-info" data-dismiss="modal" onclick="editCamera(this)" id="edtiCamera" >修改</button>
+								<button class="btn btn-info" type="reset">重置</button>
+								<button class="btn btn-info" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>   
+		</div>
+		<!-- 	描述：修改摄像头 -->
+	</div>   
+</div>

@@ -1,0 +1,19 @@
+{
+list :[{
+				"companyId" : "10001",
+				"companyName" : "软件研究中心",
+				"address" : "锡科601",
+				"telephone" : "666666",
+				"recordNumber" : "1100001111",
+				"principal" : "刘博士"
+},
+{
+				"companyId" : "10001",
+				"companyName" : "软件研究中心",
+				"address" : "锡科601",
+				"telephone" : "666666",
+				"recordNumber" : "1100001111",
+				"principal" : "刘博士"
+}
+]
+}

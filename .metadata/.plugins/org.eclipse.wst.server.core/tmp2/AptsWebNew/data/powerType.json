@@ -1,0 +1,6 @@
+{
+list:[
+        {"typeId":"1", "typeName":"菜单"},
+        {"typeId":"2", "typeName":"URL"}
+     ]
+}

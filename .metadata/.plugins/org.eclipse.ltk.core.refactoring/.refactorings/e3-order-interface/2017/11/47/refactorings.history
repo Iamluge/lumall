@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.lumall.order.service&apos; to &apos;e3-order-service/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;e3-order-interface&apos;&#x0D;&#x0A;- Destination element: &apos;e3-order-service/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;e3-order-interface/src/main/java/com.lumall.order.service&apos;" description="Copy package" destination="=e3-order-service/src\/main\/java" element1="/src\/main\/java&lt;com.lumall.order.service" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1511185706575" version="1.0"/>
+</session>

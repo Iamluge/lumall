@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="company" namespace="/company" extends="mypackage">
+		<action name="addCompany" class="companyAction"
+			method="addCompany">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+		<action name="findAllCompany" class="companyAction" method="findAllCompany">
+			<result type="json">
+				<param name="root">companyList</param>
+				<param name="excludeProperties">
+				</param>
+			</result>
+		</action>
+		
+		<action name="findPagCompanyAct" class="companyAction" method="findPagCompanyAct">
+			<result type="json">
+				<param name="root">pageModel</param>
+				<param name="excludeProperties">
+				</param>
+			</result>
+		</action>
+		
+		<action name="logoutCompany" class="companyAction"
+			method="logoutCompany">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteCompany" class="companyAction"
+			method="deleteCompany">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findCompanyInfo" class="companyAction"
+			method="findCompanyInfo">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="companyInfoSetting" class="companyAction"
+			method="companyInfoSetting">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>
+
+
+

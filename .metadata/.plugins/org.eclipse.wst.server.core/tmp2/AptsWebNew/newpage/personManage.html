@@ -1,0 +1,167 @@
+<meta charset="utf-8">
+
+<div id="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading">
+					<strong style="font-size: 19px;"><i class="icon-list"></i>
+						人员列表</strong>
+				</div>
+				<table id="personTable"
+					class="table table-hover table-bordered table-responsive">
+					<tr align="center">
+						<button type="button" class="btn btn-warning" data-toggle="modal"
+							data-target="#addPerson">添加用户</button>
+						<button class="btn btn-danger" onclick="deletePerson()">批量删除用户</button>
+					</tr>
+					<tr class="active" align="center">
+						<th style="text-align: center;"><input type="checkbox"
+							onclick="checkAll()" id="checkBoss" /></th>
+						<th style="text-align: center;">人员代码</th>
+						<th style="text-align: center;">姓名</th>
+						<th style="text-align: center;">所属商家</th>
+						<th style="text-align: center;">操作</th>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+		<!--   描述：添加人员-->
+		<div class="modal fade" id="addPerson" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-user"></i> 个人信息</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">人员代码：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="person_id">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">姓名：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="person_name">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">所属商家：</label>
+							<div class="col-sm-9">
+								<select>
+									<option id="company"></option>
+								</select>
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button class="btn btn-info" data-dismiss="modal"
+									onclick="addPerson()">添加</button>
+								<button class="btn btn-info" type="reset">重置</button>
+								<button class="btn btn-info" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--   描述：添加人员-->
+
+		<!-- 	描述：修改人员 -->
+		<div class="modal fade" id="editPerson" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-user"></i> 人员信息</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">人员代码：</label>
+							<div class="col-sm-9">
+								<span id="editId" class="form-control"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">姓名：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editName">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">所属商家：</label>
+							<div class="col-sm-9">
+								<select>
+									<option id="editCompany"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button class="btn btn-info" data-dismiss="modal"
+									onclick="editPerson()" id="edtiPerson">修改</button>
+								<button class="btn btn-info" type="reset">重置</button>
+								<button class="btn btn-info" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 	描述：修改人员 -->
+
+		<!--   描述：设置角色-->
+		<div class="modal fade" id="setRole" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-list"></i> 角色列表</strong>
+					</div>
+					<table id="roleTable" class="table table-hover table-bordered table-responsive">
+						<tr class="active" align="center">
+							<th style="text-align: center;"></th>
+							<th style="text-align: center;">角色名称</th>
+						</tr>
+					</table>
+					<button class="btn btn-info" data-dismiss="modal"
+						onclick="setRole()" id="setRoleBut">确定</button>
+					<button class="btn btn-info" type="reset">重置</button>
+					<button class="btn btn-info" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+		<!--   描述：设置角色-->
+		
+			<!--   描述：删除角色-->
+		<div class="modal fade" id="deleteRole" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-list"></i> 拥有的角色列表</strong>
+					</div>
+					<table id="roleTable2" class="table table-hover table-bordered table-responsive">
+						<tr class="active" align="center">
+							<th style="text-align: center;"></th>
+							<th style="text-align: center;">角色名称</th>
+						</tr>
+					</table>
+					<button class="btn btn-info" data-dismiss="modal"
+						onclick="deleteRoleFromUser()" id="deleteRoleBut">确定删除</button>
+					<button class="btn btn-info" type="reset">重置</button>
+					<button class="btn btn-info" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+		<!--   描述：删除角色-->  
+</div>  

@@ -1,7 +1,9 @@
 com\lumall\controller\FileController.class
 com\lumall\controller\PageController.class
 com\lumall\controller\ContentCotroller.class
+com\lumall\exception\GlobalExceptionResolver.class
 com\lumall\controller\ContentCategoryController.class
+com\lumall\controller\SolrItemController.class
 com\lumall\controller\ItemController.class
 com\lumall\controller\ItemDescController.class
 com\lumall\controller\ItemCatController.class

@@ -12,6 +12,8 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\研发中心\APTS_latest_from杨海生\源代码\AptsWebNew"/>
+			<item value="D:\研发中心\APTS_latest_from杨海生\源代码\AptsServer"/>
 			<item value="D:\javaee32\fastdfs_client"/>
 			<item value="D:\javaee32\fastdfsClient"/>
 			<item value="D:\javaee32\pagehelper-fix"/>
@@ -21,5 +23,13 @@
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="637" key="DIALOG_X_ORIGIN"/>
+		<item value="275" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

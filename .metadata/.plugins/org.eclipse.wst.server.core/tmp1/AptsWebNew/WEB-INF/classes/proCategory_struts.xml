@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+<struts>
+
+
+	<package name="proCategroy" namespace="/proCategroy" extends="mypackage">
+		
+		<action name="findAllProCategory" class="proCategoryAction" method="findAllProCategory">
+			<result type="json">
+				<param name="root">proCategoryList</param>
+			</result>
+		</action>
+		
+		<action name="findUserHasProcCategoryPower" class="proCategoryAction" method="findUserHasProcCategoryPower">
+			<result type="json">
+				<param name="root">proCategoryList</param>
+			</result>
+		</action>
+		
+		<action name="findProCategoryByCompanyId" class="proCategoryAction" method="findProCategoryByCompanyId">
+			<result type="json">
+				<param name="root">proCategoryList</param>
+			</result>
+		</action>
+		
+		<action name="findProListbyCode" class="proCategoryAction" method="findProListbyCode">
+			<result type="json">
+				<param name="root">proCategoryList</param>
+			</result>
+		</action>
+		<action name="findImgByOssUrl" class="proCategoryAction" method="findImgByOssUrl">
+			<result type="json">
+				<param name="root">proAndOssMap</param>
+			</result>
+		</action>
+		
+		<action name="findProcCgByProdCgId" class="proCategoryAction" method="findProcCgByProdCgId">
+			<result type="json">
+				<param name="root">proCategoryList</param>
+			</result>
+		</action>
+		
+		<action name="addProCategory" class="proCategoryAction" method="addProCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteProCategory" class="proCategoryAction" method="deleteProCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+	    <action name="editProCategory" class="proCategoryAction" method="editProCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="activateProCategory" class="proCategoryAction" method="activateProCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="logoutProCategory" class="proCategoryAction" method="logoutProCategory">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="setProcCategorySession" class="proCategoryAction" method="setProcCategorySession">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+	</package>
+</struts>

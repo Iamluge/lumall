@@ -1,0 +1,22 @@
+div#container{width:950px}
+div#headerlogo {height:140px;width:950px}
+div#header {height:300px;width:950px}
+div#headermenutop {background-color:#99bbbb;height:50px;width:200px}
+div#headerfind {height:30px;width:950px ;width:950px;height:50px;background-color: #32CD32;}
+div#headermenu {background-color:#99bbbb;height:400px;}
+div#menu {background-color:#ffffff;width:200px;float:left;}
+div#body {background-color:#ffffff;width:750px;float:right;}
+div#body2 {background-color:#ffffff;width:750px;float:right;}
+div#body3 {background-color:#ffffff;width:750px;float:right;}
+div#content {background-color:#EEEEEE;height:200px;width:750px;float:left;width:950px;}
+h1 {margin-bottom:0;}
+h2 {margin-bottom:0;font-size:18px;}
+ul {width:610px;}
+li {float:left;width:200px;}
+div#divjuli{margin:0;border:0;padding:0;}
+
+#find {
+	position:absolute;
+	top:520px;
+	margin-top:-120px; /* negative half of the height */
+}

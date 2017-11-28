@@ -1,0 +1,21 @@
+.bgcl00 {
+	background-image: url(../images/touban1.jpg);
+	background-repeat: no-repeat, repeat-x;
+	background-position: center center, top left;
+	background-size:cover; 
+}
+
+.bgcl01 {
+	background-image: url(../images/aptsApk.png);
+	background-repeat: no-repeat, repeat-x;
+	background-position: center center, top left;
+	background-size:cover; 
+}
+
+.bgcl02 {
+	background-color:#63B8FF;
+	background-repeat: no-repeat, repeat-x;
+	background-position: center center, top left;
+	background-size:cover; 
+}
+

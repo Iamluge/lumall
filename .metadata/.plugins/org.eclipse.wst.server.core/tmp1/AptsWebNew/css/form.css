@@ -1,0 +1,40 @@
+body {
+	margin-left: 2px;
+	margin-top: 0px;
+	margin-right: 2px;
+	margin-bottom: 1px;
+}
+
+div {
+	vertical-align: bottom;
+}
+
+img {
+	margin: 0 3px -3px 0;
+}
+
+.image {
+	display: block;
+	vertical-align: top;
+	margin-bottom: -2px;
+	margin-left: -2px;
+	margin-top: -2px;
+	margin-right: -2px;
+	width: 37px;
+	height: 15px;
+}
+
+.space {
+	float: right;
+	color: #000;
+}
+
+.rightDIV {
+	float: right;
+	width: 37px;
+	align: right;
+}
+
+#tb{width:100%;border:0;cellpadding:0; cellspacing:1; background-color:#a8c7ce;}
+#tb tr{border-bottom:0px  #CCC;padding:0px;background-color:white;} 
+#tb td{border:0px  #EEE;padding:4px;}

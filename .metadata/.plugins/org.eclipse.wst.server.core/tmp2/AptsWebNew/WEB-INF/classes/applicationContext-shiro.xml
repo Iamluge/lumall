@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd     http://www.springframework.org/schema/tx    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd    http://www.springframework.org/schema/aop    http://www.springframework.org/schema/aop/spring-aop-3.0.xsd    http://www.springframework.org/schema/context    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<context:annotation-config />
+	
+
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="shiroDbRealm" />
+		
+	</bean>
+	
+	<!-- 項目自定义的Realm -->
+	<bean id="shiroDbRealm" class="org.jyu.apts.security.shiro.ShiroDbRealm">
+	</bean>
+	
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/login.jsp" />
+		<property name="successUrl" value="/extFarmeHtml/mymain.jsp" />
+		<property name="unauthorizedUrl" value="/login.jsp" />
+		<property name="filterChainDefinitions">
+			<value>
+				/login.jsp = anon
+				/login2.jsp = anon
+				/index.jsp = anon
+				/newthink = anon
+				/processorInfo/findProInfoByDProcProd.action = anon
+				/processorInfo/findAllProInfobyproductCode.action = anon
+				/processorInfo/findKuaiDiByDProcProd.action = anon
+				/product/findProductByProductCode.action = anon
+				/proCategroy/findProListbyCode.action = anon
+				/extFrameHtml/vedio.html = anon 
+				/sysUser/loginCheck.action = anon  
+				/sysUser/loginCheck2.action = anon  
+				/images/** = anon
+				/ckplayer/** = anon
+				/js.js = anon
+				/jsp/** = anon
+				/js/** = anon
+				/melon/** = anon
+				/newpage/** = anon
+				/jquery/** = anon
+				/css/** = anon
+				/index/** = anon
+				/integrity/** = anon
+				/** = authc
+			</value>
+		</property>
+	</bean>
+
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+	
+	
+
+</beans>

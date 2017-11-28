@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="productionPlan" namespace="/productionPlan" extends="mypackage">
+		
+		<action name="findProductPlanByProductCategoryId" class="productionPlanAction"
+			method="findProductPlanByProductCategoryId">
+			<result type="json">
+				<param name="root">productPlanList</param>
+			</result>
+		</action>
+		<action name="findproPlanByCompany" class="productionPlanAction"
+			method="findproPlanByCompany">
+			<result type="json">
+				<param name="root">extPage</param>
+				<param name="excludeProperties">
+					list.*\.productionPlanMaterials,
+			</param>
+			</result>
+		</action>
+		
+		<action name="addProductPlan" class="productionPlanAction"
+			method="addProductPlan">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="updateProductPlan" class="productionPlanAction"
+			method="updateProductPlan">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		
+		
+		<action name="deleteProductionPlan" class="productionPlanAction"
+			method="deleteProductionPlan">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>

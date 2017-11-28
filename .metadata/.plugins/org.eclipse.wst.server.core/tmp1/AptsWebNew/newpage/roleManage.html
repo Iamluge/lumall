@@ -1,0 +1,363 @@
+<meta charset="utf-8">
+<!--
+                	描述：container
+                -->
+<div id="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading">
+					<strong style="font-size: 19px;"><i class="icon-list"></i> 角色列表</strong>
+				</div>
+				<table id="roleTable"
+					class="table table-hover table-bordered table-responsive">
+					<tr align="center">
+						<button type="button" class="btn btn-warning" data-toggle="modal"
+							data-target="#addRole">添加角色</button>
+						<button class="btn btn-danger" onclick="deleteRole()">批量删除角色</button>
+					</tr>
+					<tr class="active" align="center">
+						<th style="text-align: center;"><input type="checkbox"
+							onclick="checkAll()" id="checkBoss" /></th>
+						<th style="text-align: center;">角色名称</th>
+						<th style="text-align: center;">角色描述</th>
+						<th style="text-align: center;">详细描述</th>
+						<th style="text-align: center;">操作</th>
+					</tr>
+
+				</table>
+
+			</div>
+		</div>
+	</div>
+		<!--   描述：添加角色-->
+		<div class="modal fade" id="addRole" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-user-md"></i><input
+							type="checkbox" name="power"> 角色信息</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">角色名称：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="role_name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">角色描述：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="role_description">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">详细描述：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control"
+									id="role_minuteDescription">
+							</div>
+						</div>
+
+
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button class="btn btn-info" data-dismiss="modal"
+									onclick="addRole()">添加</button>
+								<button class="btn btn-info" type="reset">重置</button>
+								<button class="btn btn-info" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--   描述：添加角色-->
+
+		<!-- 	描述：修改角色 -->
+		<div class="modal fade" id="editRole" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-user-md"></i><input
+							type="checkbox" name="power"> 角色信息</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">角色名称：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editName">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">角色描述：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="editDescription">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-sm-3 control-label">详细描述：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control"
+									id="editMinuteDescription">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button class="btn btn-info" data-dismiss="modal"
+									onclick="editRole(this)" id="edtiRole">修改</button>
+								<button class="btn btn-info" type="reset">重置</button>
+								<button class="btn btn-info" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 	描述：修改角色 -->
+
+		<!-- 	描述：为角色设置权限 -->
+		<div class="modal fade" id="powerSetting" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-legal"></i> 权限信息（添加选中的权限）</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label"></label>
+							<div class="col-sm-9">
+								<ul id="nav">
+									<li><a href="#"> <i></i><input type="checkbox"
+											name="power" id="二维码管理"
+											value="4028a8ec45c6292e0145c64515170010"> 二维码管理
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+
+									<li><a href="#"> <i></i><input
+											type="checkbox" name="power" id="生产管理"
+											value="4028ab7746c73c430146c73dc6050000"> 生产管理
+									</a>
+										<ul class="sub-menu">
+
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="生产计划"
+													value="4028ab774704dd58014704dedad80000"> 生产计划
+											</a></li>
+
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="材料采购"
+													value="4028ab7746bda2600146bda3f37f0000"> 材料采购
+											</a></li>
+											<li><a href="#"> <i></i><input
+													type="checkbox" name="power" id="材料清单"
+													value="4028ab7746bcc8ea0146bccaa0190000"> 材料清单
+											</a></li>
+										</ul></li>
+									<li><a href="#"> <i></i><input type="checkbox"
+											name="power" id="视频监控"
+											value="4028a85446b2fd460146b2ffd06c0000"> 视频监控
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+									<li><a href="#" onclick=> <i></i><input
+											type="checkbox" name="power" id="用户管理"
+											value="4028ab77470fc15901470fcd9a5d0001"> 用户管理
+									</a>
+										<ul class="sub-menu">
+
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="商家权限管理"
+													value="4028a89b45c0ce360145c0d2f2340001"> 商家权限管理
+											</a></li>
+
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="商家角色管理"
+													value="4028a89b45c0ce360145c0d26ea30000"> 商家角色管理
+											</a></li>
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="人员管理"
+													value="4028a89b45bcc3d10145bcc514080000"> 人员管理
+											</a></li>
+										</ul></li>
+									<li><a href="#"> <i></i><input type="checkbox"
+											name="power" id="商家产品管理"
+											value="4028a89b45bcc3d10145bcc7e9eb0003"> 商家产品管理
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+									<li><a href="#"> <i></i><input type="checkbox"
+											name="power" id="流程监控"
+											value="4028ab77470fc15901470fce7c440002"> 流程监控
+									</a>
+										<ul class="sub-menu">
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="流程操作"
+													value="4028a89b45bcc3d10145bcc89c5e0005"> 流程操作
+											</a></li>
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="流程管理"
+													value="4028a89b45bcc3d10145bcc778e20002"> 流程管理
+											</a></li>
+											<li><a href="#"> <i></i><input type="checkbox"
+													name="power" id="自定义模板管理"
+													value="4028abfd477fe04201477fe6cb500000"> 自定义模板管理
+											</a></li>
+										</ul></li>
+									<li><a href="#"> <i id="商家信息设置"></i><input
+											type="checkbox" name="power" id="商家信息设置"
+											value="4028a8ec4618d577014642c8d2480000"> 商家信息设置
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+									<li><a href="#"> <i></i><input type="checkbox"
+											name="power" id="进入企业诚信主页"
+											value="4028ab5147c3a3260147c41329070000"> 进入企业诚信主页
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+								</ul>
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<button class="btn btn-info" data-dismiss="modal"
+											onclick="powerSet()" id="powerSetting">设置</button>
+										<button class="btn btn-info" type="reset">重置</button>
+										<button class="btn btn-info" data-dismiss="modal">取消</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>    
+		</div>
+		<!-- 	描述：为角色设置权限  -->	   
+		
+			<!-- 	描述：为角色注销权限 -->
+		<div class="modal fade" id="powerDel" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong id="rolesPower"><i class="icon-legal"></i> 拥有的权限</strong>
+					</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-sm-3 control-label"></label>
+							<div class="col-sm-9">
+								<ul id="nav">
+									<li id="4028a8ec45c6292e0145c64515170010" hidden="true" name="powerli"><a href="#"> <i></i><input type="checkbox"
+											name="powerdel" id="二维码管理"
+											value="4028a8ec45c6292e0145c64515170010"> 二维码管理
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+
+									<li hidden="true" name="powerli" id="4028ab7746c73c430146c73dc6050000"><a href="#"> <i></i><input
+											type="checkbox" name="powerdel" id="生产管理"
+											value="4028ab7746c73c430146c73dc6050000"> 生产管理
+									</a>
+										<ul class="sub-menu">
+
+											<li hidden="true" name="powerli" id="4028ab774704dd58014704dedad80000"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="生产计划"
+													value="4028ab774704dd58014704dedad80000"> 生产计划
+											</a></li>
+
+											<li hidden="true" name="powerli" id="4028ab7746bda2600146bda3f37f0000"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="材料采购"
+													value="4028ab7746bda2600146bda3f37f0000"> 材料采购
+											</a></li>
+											<li hidden="true" name="powerli" id="4028ab7746bcc8ea0146bccaa0190000"><a href="#" onclick="material()"> <i></i><input
+													type="checkbox" name="powerdel" id="材料清单"
+													value="4028ab7746bcc8ea0146bccaa0190000"> 材料清单
+											</a></li>
+										</ul></li>
+									<li hidden="true" name="powerli" id="4028a85446b2fd460146b2ffd06c0000"><a href="#"> <i></i><input type="checkbox"
+											name="powerdel" id="视频监控"
+											value="4028a85446b2fd460146b2ffd06c0000"> 视频监控
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+									<li hidden="true" name="powerli" id="4028ab77470fc15901470fcd9a5d0001"><a href="#" onclick=> <i></i><input
+											type="checkbox" name="powerdel" id="用户管理"
+											value="4028ab77470fc15901470fcd9a5d0001"> 用户管理
+									</a>
+										<ul class="sub-menu">
+
+											<li hidden="true" name="powerli" id="4028a89b45c0ce360145c0d2f2340001"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="商家权限管理"
+													value="4028a89b45c0ce360145c0d2f2340001"> 商家权限管理
+											</a></li>
+
+											<li hidden="true" name="powerli" id="4028a89b45c0ce360145c0d26ea30000"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="商家角色管理"
+													value="4028a89b45c0ce360145c0d26ea30000"> 商家角色管理
+											</a></li>
+											<li hidden="true" name="powerli" id="4028a89b45bcc3d10145bcc514080000"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="人员管理"
+													value="4028a89b45bcc3d10145bcc514080000"> 人员管理
+											</a></li>
+										</ul></li>
+									<li hidden="true" name="powerli" id="4028a89b45bcc3d10145bcc7e9eb0003"><a href="#"> <i></i><input type="checkbox"
+											name="powerdel" id="商家产品管理"
+											value="4028a89b45bcc3d10145bcc7e9eb0003"> 商家产品管理
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+									<li hidden="true" name="powerli" id="4028ab77470fc15901470fce7c440002"><a href="#"> <i></i><input type="checkbox"
+											name="powerdel" id="流程监控"
+											value="4028ab77470fc15901470fce7c440002"> 流程监控
+									</a>
+										<ul class="sub-menu">
+											<li hidden="true" name="powerli" id="4028a89b45bcc3d10145bcc89c5e0005"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="流程操作"
+													value="4028a89b45bcc3d10145bcc89c5e0005"> 流程操作
+											</a></li>
+											<li hidden="true" name="powerli" id="4028a89b45bcc3d10145bcc778e20002"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="流程管理"
+													value="4028a89b45bcc3d10145bcc778e20002"> 流程管理
+											</a></li>
+											<li hidden="true" name="powerli" id="4028abfd477fe04201477fe6cb500000"><a href="#"> <i></i><input type="checkbox"
+													name="powerdel" id="自定义模板管理"
+													value="4028abfd477fe04201477fe6cb500000"> 自定义模板管理
+											</a></li>
+										</ul></li>
+									<li hidden="true" name="powerli" id="4028a8ec4618d577014642c8d2480000"><a href="#"> <i id="商家信息设置"></i><input
+											type="checkbox" name="powerdel" id="商家信息设置"
+											value="4028a8ec4618d577014642c8d2480000"> 商家信息设置
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+									<li hidden="true" name="powerli" id="4028ab5147c3a3260147c41329070000"><a href="#"> <i></i><input type="checkbox"
+											name="powerdel" id="进入企业诚信主页"
+											value="4028ab5147c3a3260147c41329070000"> 进入企业诚信主页
+									</a>
+										<ul class="sub-menu">
+										</ul></li>
+								</ul>
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<button class="btn btn-info" data-dismiss="modal"
+											onclick="powerDel()" id="powerDelBtn">注销</button>
+										<button class="btn btn-info" type="reset">重置</button>
+										<button class="btn btn-info" data-dismiss="modal">取消</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>    
+		</div>
+		<!-- 	描述：为角色注销权限  -->	
+</div>

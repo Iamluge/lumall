@@ -1,0 +1,15 @@
+package com.lumall.order.service.impl;
+
+import com.lumall.common.util.E3Result;
+import com.lumall.order.pojo.OrderInfo;
+import com.lumall.order.service.OrderService;
+
+public class OrderServiceImpl implements OrderService {
+
+	@Override
+	public E3Result createOrder(OrderInfo orderInfo) {
+		
+		return null;
+	}
+
+}

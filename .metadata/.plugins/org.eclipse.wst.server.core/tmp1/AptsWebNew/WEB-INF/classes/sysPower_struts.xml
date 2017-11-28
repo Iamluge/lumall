@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="sysPower" namespace="/sysPower" extends="mypackage">
+		
+		<action name="findPowerByParentPowerId" class="powerAction"
+			method="findPowerByParentPowerId">
+			<result type="json">
+				<param name="root">sysPowerList</param>
+			</result>
+		</action>
+		
+		<action name="findMenuByParentPowerId" class="powerAction"
+			method="findMenuByParentPowerId">
+			<result type="json">
+				<param name="root">sysPowerList</param>
+				<param name="excludeProperties">
+					\[\d+\]\.checked
+				</param>
+			</result>
+		</action>
+		
+		<action name="findPowerByRoleIdAndPowerId" class="powerAction"
+			method="findPowerByRoleIdAndPowerId">
+			<result type="json">
+				<param name="root">sysPowerList</param>
+			</result>
+		</action>
+		
+		<action name="findMenuByUserIdAndPowerId" class="powerAction"
+			method="findMenuByUserIdAndPowerId">
+			<result type="json">
+				<param name="root">sysPowerList</param>
+				<param name="excludeProperties">
+					\[\d+\]\.checked
+				</param>
+			</result>
+		</action>
+		
+		<action name="findPowerByComAdminAndPowerId" class="powerAction"
+			method="findPowerByComAdminAndPowerId">
+			<result type="json">
+				<param name="root">sysPowerList</param>
+			</result>
+		</action>
+		
+		<action name="addSysPower" class="powerAction"
+			method="addSysPower">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="editSysPower" class="powerAction"
+			method="editSysPower">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="addPowerToRole" class="powerAction"
+			method="addPowerToRole">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deletePowerToRole" class="powerAction"
+			method="deletePowerToRole">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findPowerById" class="powerAction"
+			method="findPowerById">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteSysPower" class="powerAction"
+			method="deleteSysPower">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

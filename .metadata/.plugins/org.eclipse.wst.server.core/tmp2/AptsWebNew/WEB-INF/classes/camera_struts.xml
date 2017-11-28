@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="camera" namespace="/camera" extends="mypackage">
+		<action name="addCamera" class="cameraAction"
+			method="addCamera">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+		<action name="deleteCamera" class="cameraAction"
+			method="deleteCamera">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="editCamera" class="cameraAction"
+			method="editCamera">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findCaremaByCompanyId" class="cameraAction"
+			method="findCaremaByCompanyId">
+			<result type="json">
+				<param name="root">cameraList</param>
+			</result>
+		</action>
+		
+	</package>
+
+</struts>
+
+
+

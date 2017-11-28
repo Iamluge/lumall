@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+        http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<context:component-scan base-package="com.lumall.order.controller" />
+	<mvc:annotation-driven />
+	<!-- 加载配置文件 -->
+	<context:property-placeholder location="classpath:conf/resource.properties" />
+
+	<!-- 拦截器配置 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.lumall.order.interceptor.LoginInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+
+	<!-- 引用dubbo服务 -->
+	<dubbo:application name="e3-order-web" />
+	<!-- <dubbo:registry protocol="zookeeper" address="192.168.25.132:2181"/> -->
+	<!-- 使用京东云 -->
+	<dubbo:registry protocol="zookeeper" address="114.67.225.103:2181" />
+	<!-- <dubbo:reference interface="com.lumall.service.ItemService"
+		id="itemServiceImpl" />
+	<dubbo:reference interface="com.lumall.sso.service.TokenService"
+		id="tokenServiceImpl" /> -->
+	<dubbo:reference interface="com.lumall.cart.service.CartService"
+		id="cartServiceImpl" />
+		<dubbo:reference interface="com.lumall.sso.service.TokenService"
+		id="tokenServiceImpl" />
+		<dubbo:reference interface="com.lumall.order.service.OrderService"
+		id="orderServiceImpl" />
+
+</beans>

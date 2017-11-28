@@ -1,1 +1,2 @@
 com\lumall\portal\controller\IndexController.class
+com\lumall\portal\exception\GlobalExceptionResolver.class

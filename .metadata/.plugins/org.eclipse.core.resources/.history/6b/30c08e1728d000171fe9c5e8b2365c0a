@@ -1,0 +1,10 @@
+package com.lumall.common.util;
+
+import java.io.File;
+import java.io.InputStream;
+
+public class UploadUtils {
+public static void uploadImg(InputStream is,String filename){
+	AliyunOSSClientUtil.uploadObject2OSS(AliyunOSSClientUtil.getOSSClient(),is,filename, OSSClientConstants.BACKET_NAME, OSSClientConstants.FOLDER);
+}
+}

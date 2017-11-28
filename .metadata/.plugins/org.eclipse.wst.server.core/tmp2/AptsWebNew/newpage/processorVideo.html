@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>农场品溯源系统</title>
+<!-- 视频播放插件 -->
+<script type="text/javascript" src="../melon/fileInput/video.min.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="../melon/fileInput/video-js.min.css" />
+<!--=== CSS ===-->
+
+<!-- Bootstrap -->
+<link href="../melon/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+<!-- font styles -->
+<link rel="stylesheet" type="text/css"
+	href="../melon/assets/css/plugins/bootstrap-wysihtml5.css"></link>
+<!-- jQuery UI -->
+<!--<link href="../melon/plugins/jquery-ui/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />-->
+<!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" href="../melon/plugins/jquery-ui/jquery.ui.1.10.2.ie.css"/>
+	<![endif]-->
+
+<!-- Theme -->
+<link href="../melon/assets/css/main.css" rel="stylesheet"
+	type="text/css" />
+<link href="../melon/assets/css/plugins.css" rel="stylesheet"
+	type="text/css" />
+<link href="../melon/assets/css/responsive.css" rel="stylesheet"
+	type="text/css" />
+<link href="../melon/assets/css/icons.css" rel="stylesheet"
+	type="text/css" />
+
+<link rel="stylesheet"
+	href="../melon/assets/css/fontawesome/font-awesome.min.css">
+<!--[if IE 7]>
+		<link rel="stylesheet" href="../melon/assets/css/fontawesome/font-awesome-ie7.min.css">
+	<![endif]-->
+
+
+<!--=== JavaScript ===-->
+
+<script type="text/javascript"
+	src="../melon/assets/js/libs/jquery-1.10.2.min.js"></script>
+<script type="text/javascript"
+	src="../melon/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+
+<script type="text/javascript"
+	src="../melon/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+	src="../melon/assets/js/libs/lodash.compat.min.js"></script>
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+		<script src="../melon/assets/js/libs/html5shiv.js"></script>
+	<![endif]-->
+
+<!-- Smartphone Touch Events -->
+<script type="text/javascript"
+	src="../melon/plugins/touchpunch/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript"
+	src="../melon/plugins/event.swipe/jquery.event.move.js"></script>
+<script type="text/javascript"
+	src="../melon/plugins/event.swipe/jquery.event.swipe.js"></script>
+
+<!-- General -->
+<script type="text/javascript"
+	src="../melon/assets/js/libs/breakpoints.js"></script>
+<script type="text/javascript"
+	src="../melon/plugins/respond/respond.min.js"></script>
+<!-- Polyfill for min/max-width CSS3 Media Queries (only for IE8) -->
+<script type="text/javascript"
+	src="../melon/plugins/cookie/jquery.cookie.min.js"></script>
+<script type="text/javascript"
+	src="../melon/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script type="text/javascript"
+	src="../melon/plugins/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+
+<!-- App -->
+<script type="text/javascript" src="../melon/assets/js/app.js"></script>
+<script type="text/javascript" src="../melon/assets/js/plugins.js"></script>
+<script type="text/javascript"
+	src="../melon/assets/js/plugins.form-components.js"></script>
+<script>
+	$(document).ready(function() {
+		"use strict";
+
+		App.init(); // Init layout and core plugins
+		Plugins.init(); // Init all plugins
+		FormComponents.init(); // Init all form-specific plugins
+
+	});
+</script>
+<script type="text/javascript" src="processorVideo.js"></script>
+</head>
+<body onload="videoInfo();">
+	<!-- 观看视频 -->
+	<div class="panel-heading">
+		<i class="icon-list" style="font-size: 18px;"></i>&nbsp;<strong
+			style="font-size: 22px;">视频播放</strong>
+	</div>
+	<hr>
+	<br>
+	<div id="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-3">
+				<i class="icon-info" style="font-size: 18px;"></i>&nbsp; <b
+					style="font-size: 22px;">视频简介</b>
+				<p style="font-size: 18px;">
+					所属流程：<span id="vedioProcessor"></span>
+				</p>
+				<p style="font-size: 18px;">
+					标题：<span id="vedioTitle"></span>
+				</p>
+				<p style="font-size: 18px;">
+					描述：<span id="vedioDescription"></span>
+				</p>
+				<p style="font-size: 18px;">
+					录入时间：<span id="vedioUploadDate"></span>
+				</p>
+			</div>
+			<div class="col-md-8">
+				<video id="my_video_1" class="video-js vjs-default-skin" controls
+					preload="auto" width="750" height="500" poster="" data-setup="{}">
+					<source id="vedioMp4Src" src="" type="video/mp4">
+					<source id="vedioWebmSrc" src="" type='video/webm'/>
+				</video>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server port="8080">
+  <module context="AptsWebNew" name="AptsWebNew" path="D:/javaee32/template-mars2/.metadata/.plugins/org.eclipse.wst.server.core/tmp2/AptsWebNew" type="j2ee"/>
+</server>

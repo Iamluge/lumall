@@ -14,7 +14,8 @@
 		<!-- 加载配置文件 -->
 	<context:property-placeholder location="classpath:conf/resource.properties" />
 
-	
+	<!-- 全局异常处理器 -->
+	<bean class="com.lumall.portal.exception.GlobalExceptionResolver" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/" />
@@ -23,7 +24,9 @@
 
 	<!-- 引用dubbo服务 -->
 	 <dubbo:application name="e3-portal-web"/>
-	<dubbo:registry protocol="zookeeper" address="192.168.25.132:2181"/>	
+	 <!-- <dubbo:registry protocol="zookeeper" address="192.168.25.132:2181"/> -->
+	 <!-- 使用京东云 -->
+	<dubbo:registry protocol="zookeeper" address="114.67.225.103:2181"/>	
 	<dubbo:reference interface="com.lumall.content.service.ContentService" id="contentService" />
 	
 	

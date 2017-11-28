@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;e3-common&apos;&#x0D;&#x0A;- Original project: &apos;e3-common&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.lumall.common.jedis.JedisClient.java&#x0D;&#x0A;     com.lumall.common.jedis.JedisClientCluster.java&#x0D;&#x0A;     com.lumall.common.jedis.JedisClientPool.java" description="Delete elements" element1="/src\/main\/java&lt;com.lumall.common.jedis{JedisClientPool.java" element2="/src\/main\/java&lt;com.lumall.common.jedis{JedisClientCluster.java" element3="/src\/main\/java&lt;com.lumall.common.jedis{JedisClient.java" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1509584661877" subPackages="false" version="1.0"/>
+</session>

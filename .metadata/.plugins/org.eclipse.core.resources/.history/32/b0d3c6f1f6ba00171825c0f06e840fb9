@@ -1,8 +1,0 @@
-package com.lumall.web.test;
-
-import org.junit.Test;
-
-public class TestUpload {
-	@Test
-public void upload()throws Exception{}
-}

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="sysUser" namespace="/sysUser" extends="mypackage">
+		
+		<action name="findAllSysUser" class="sysUserAction"
+			method="findAllSysUser">
+			<result type="json">
+				<param name="root">sysUserList</param>
+			</result>
+		</action>
+		
+		<action name="findSysUserByCompanyId" class="sysUserAction"
+			method="findSysUserByCompanyId">
+			<result type="json">
+				<param name="root">sysUserList</param>
+			</result>
+		</action>
+		
+		<action name="findPageSysUserByCompanyId" class="sysUserAction"
+			method="findPageSysUserByCompanyId">
+			<result type="json">
+				<param name="root">pageModel</param>
+			</result>
+		</action>
+		
+		<action name="addSysUser" class="sysUserAction"
+			method="addSysUser">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="editSysUser" class="sysUserAction"
+			method="editSysUser">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findSessionSysUser" class="sysUserAction"
+			method="findSessionSysUser">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findSysUserInfo" class="sysUserAction"
+			method="findSysUserInfo">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteSysUser" class="sysUserAction"
+			method="deleteSysUser">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="loginCheck" class="sysUserAction" method="loginCheck">
+			<!-- <result name="success" type="redirect">../extFrameHtml/main.html</result> -->
+			<result name="success" type="redirect">../extFrameHtml/mymain.jsp</result>
+			<result name="error" type="redirect">../login.jsp</result>
+		</action>
+		
+		<action name="loginCheck2" class="sysUserAction" method="loginCheck2">
+			<result name="success" type="redirect">../extFrameHtml/main2.html</result>
+			<result name="error" type="redirect">../login2.jsp</result>
+		</action>
+		
+	   <action name="logout" class="sysUserAction" method="logout">
+	     	<result name="other" type="redirect">../login.jsp</result>
+			<result name="newthink" type="redirect">../login2.jsp</result>
+			
+		</action>
+	</package>
+
+</struts>
+
+
+

@@ -1,0 +1,33 @@
+package com.lumall.order.service.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import com.lumall.common.jedis.JedisClient;
+import com.lumall.common.util.E3Result;
+import com.lumall.order.pojo.OrderInfo;
+import com.lumall.order.service.OrderService;
+
+@Service
+public class OrderServiceImpl implements OrderService {
+	@Autowired
+	private JedisClient jedisClient;
+	@Value("${ORDERID_KEY}")
+	private String ORDERID_KEY;
+
+	@Override
+	public E3Result createOrder(OrderInfo orderInfo) {
+		// 1、接收表单的数据
+		// 采用redis生成订单号
+		jedisClient.incr(ORDERID_KEY);
+		// 2、生成订单id
+		// 3、向订单表插入数据。
+		// 4、向订单明细表插入数据
+		// 5、向订单物流表插入数据。
+		// 6、返回e3Result。
+
+		return null;
+	}
+
+}

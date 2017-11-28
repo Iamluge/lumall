@@ -5,7 +5,7 @@
 	<artifactId>e3-parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<!-- 集中定义依赖版本号 -->
+	<!-- 集中定义依赖版本号 --> 
 	<properties>
 		<junit.version>4.12</junit.version>
 		<spring.version>4.2.4.RELEASE</spring.version>
@@ -16,7 +16,7 @@
 		<slf4j.version>1.6.4</slf4j.version>
 		<jackson.version>2.4.2</jackson.version>
 		<druid.version>1.0.9</druid.version>
-		<httpclient.version>4.3.5</httpclient.version>
+		<httpclient.version>4.4.1</httpclient.version>
 		<jstl.version>1.2</jstl.version>
 		<servlet-api.version>2.5</servlet-api.version>
 		<jsp-api.version>2.0</jsp-api.version>
@@ -35,9 +35,11 @@
 		<activemq.version>5.11.2</activemq.version>
 		<freemarker.version>2.3.23</freemarker.version>
 		<quartz.version>2.2.2</quartz.version>
+
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+		
 			<!-- 时间操作组件 -->
 			<dependency>
 				<groupId>joda-time</groupId>
@@ -222,7 +224,12 @@
 				<artifactId>freemarker</artifactId>
 				<version>${freemarker.version}</version>
 			</dependency>
-
+		<!-- 阿里云OSS -->
+			<dependency>
+				<groupId>com.aliyun.oss</groupId>
+				<artifactId>aliyun-sdk-oss</artifactId>
+				<version>2.5.0</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 

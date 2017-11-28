@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="processorInfo" namespace="/processorInfo" extends="mypackage">
+		
+		<action name="findProInfoByProductCgId" class="processorInfoAction"
+			method="findProInfoByProductCgId">
+			<result type="json">
+				<param name="root">proInfoList</param>
+			</result>
+		</action>
+		
+		<action name="findKuaiDiByDProcProd" class="processorInfoAction"
+			method="findKuaiDiByDProcProd">
+			<result type="json">
+				<param name="root">kuaiDiUrlOne</param>
+			</result>
+		</action>
+		
+		<action name="findProInfoByProcProd" class="processorInfoAction"
+			method="findProInfoByProcProd">
+			<result type="json">
+				<param name="root">proInfoList</param>
+			</result>
+		</action>
+		
+		<action name="addProcessorInfo" class="processorInfoAction"
+			method="addProcessorInfo">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteProcessorInfo" class="processorInfoAction"
+			method="deleteProcessorInfo">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findAllProInfobyproductCode" class="processorInfoAction"
+			method="findAllProInfobyproductCode">
+			<result type="json">
+				<param name="root">resourceUrlList</param>
+			</result>
+		</action>
+				
+		<action name="updateProcessorInfo" class="processorInfoAction"
+			method="updateProcessorInfo">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findProInfoByDProcProd" class="processorInfoAction"
+			method="findProInfoByDProcProd">
+			<result name="picture">../jsp/image.jsp</result>
+			<result name="vedio">../jsp/vedio.jsp</result>
+			<result name="text">../jsp/text.jsp</result>
+		
+		</action>
+	</package>
+
+</struts>

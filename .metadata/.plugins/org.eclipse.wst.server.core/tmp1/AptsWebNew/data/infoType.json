@@ -1,0 +1,8 @@
+{
+"list":[
+        {"typeId":"picture", "typeName":"图片"},
+        {"typeId":"vedio", "typeName":"视频"},
+         {"typeId":"text", "typeName":"文字"},
+        {"typeId":"customInfo", "typeName":"自定义信息"}
+     ]
+}

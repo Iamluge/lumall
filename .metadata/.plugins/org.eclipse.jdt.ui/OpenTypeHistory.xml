@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=e3-search-web/D:\/javaee32\/.m2\/repository\/org\/springframework\/spring-webmvc\/4.2.4.RELEASE\/spring-webmvc-4.2.4.RELEASE.jar&lt;org.springframework.web.servlet(HandlerExceptionResolver.class[HandlerExceptionResolver" modifiers="1537" timestamp="1463390358142"/>
+<typeInfo handle="=e3-manager-pojo/src\/main\/java&lt;com.lumall.pojo{TbItem.java[TbItem" modifiers="1" timestamp="1508743268529"/>
+<typeInfo handle="=e3-sso-service/D:\/Java\/jdk1.7.0_72\/jre\/lib\/rt.jar&lt;java.nio.file.attribute(UserPrincipal.class[UserPrincipal" modifiers="1537" timestamp="1503826189750"/>
+<typeInfo handle="=e3-sso-interface/src\/main\/java&lt;com.lumall.sso.service{LoginService.java[LoginService" modifiers="513" timestamp="1511064765668"/>
+<typeInfo handle="=e3-sso-interface/src\/main\/java&lt;com.lumall.sso.service{TokenService.java[TokenService" modifiers="513" timestamp="1511073159262"/>
+<typeInfo handle="=e3-cart-interface/src\/main\/java&lt;com.lumall.cart.service{CartService.java[CartService" modifiers="513" timestamp="1511269198515"/>
+<typeInfo handle="=e3-order-interface/src\/main\/java&lt;com.lumall.order.service{OrderService.java[OrderService" modifiers="513" timestamp="1511249188576"/>
+</typeInfoHistroy>

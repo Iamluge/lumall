@@ -1,0 +1,21 @@
+package com.lumall.order.service.impl;
+
+import com.lumall.common.util.E3Result;
+import com.lumall.order.pojo.OrderInfo;
+import com.lumall.order.service.OrderService;
+
+public class OrderServiceImpl implements OrderService {
+
+	@Override
+	public E3Result createOrder(OrderInfo orderInfo) {
+//		1、接收表单的数据
+//		2、生成订单id
+//		3、向订单表插入数据。
+//		4、向订单明细表插入数据
+//		5、向订单物流表插入数据。
+//		6、返回e3Result。
+
+		return null;
+	}
+
+}

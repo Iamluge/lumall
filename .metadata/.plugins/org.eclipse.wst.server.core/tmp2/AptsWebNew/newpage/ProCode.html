@@ -1,0 +1,195 @@
+<meta charset="utf-8">
+<div id="container">
+	<div class="row">
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<strong style="font-size: 19px;"><i class="icon-list"></i>
+					二维码管理</strong>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<strong><i class="icon-list"></i> 产品列表</strong><br />
+			<table class="table table-hover table-bordered table-responsive"
+				id="productStore_Table">
+				<a type="button" class="btn btn-warning" onclick="addOptions()">生成二维码</a>
+				<tr class="active">
+					<th><input type="checkbox" name="code" onclick="checkAll()"
+						id="cameraCheck" /></th>
+					<th>产品名称</th>
+					<th>详细描述</th>
+			</table>
+		</div>
+		<br />
+		<div class="col-md-12">
+			<strong><i class="icon-list"></i> 二维码模板列表</strong><br />
+			<button type="button" class="btn btn-warning" data-toggle="modal"
+				data-target="#addModel">添加二维码模块</button>
+			<a type="button" class="btn btn-danger" onclick="deleteCodeModel()">批量删除/删除二维码模块</a>
+			<table id="CodeList_table"
+				class="table table-hover table-bordered table-responsive">
+			</table>
+		</div>
+		<!-- 生成二维码 -->
+		<div class="modal fade" id="addQRModel" tabindex="-1"
+			aria-labelledby="myModalLabel" style="dispaly: none;">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-camera"></i> 二维码信息</strong>
+					</div>
+					<form id="ModelQr_Form" class="form-horizontal">
+						<div class="form-group" id="ModelQr_Form_Product"></div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">二维码类型：</label>
+							<div class="col-sm-9">
+								<!-- 单选框 -->
+								<label class="radio-inline"> <input type="radio"
+									name="option" value="0" />普通二维码
+								</label> <label class="radio-inline"> <input type="radio"
+									name="option" value="1" />溯源二维码
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">使用模板：</label>
+							<div class="col-sm-9">
+								<select class="form-control" id="ModelQr_Form_Select"
+									onchange="optioned()"><option></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">数量：</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="codeCount"
+									placeholder="填写生成二维码的数量">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">模板信息：</label>
+							<div class="col-sm-9">
+								<table id="ModelQr_Form_Table"
+									class="table table-hover table-bordered table-responsive">
+
+								</table>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10" style="text-align: right;">
+								<button class="btn btn-info" data-dismiss="modal"
+									onclick="addProCode()">确定生成</button>
+								<button class="btn btn-warning" type="reset">重置</button>
+								<button class="btn btn-info" data-dismiss="modal">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- 添加二维码 -->
+		<div class="modal fade" id="addModel" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel" data-options="backdrop:static">
+			<form id="ProCode_Form" class="form-horizontal">
+				<div class="modal-content center-block" style="width: 500px;">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<strong><i class="icon-camera"></i> 为二维码设置指标</strong>
+							<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">&times;</button>
+						</div>
+						<table id="ProCode_Table"
+							class="table table-hover table-bordered table-responsive">
+							<tr>
+								<label class="col-sm-4 control-label">设置模板：</label>
+							</tr>
+							<tr>
+								<th>模块名称：<input type="text" class="form-control"
+									name="templateKey" placeholder="请输入模块名称" /></th>
+
+							</tr>
+							<tr>
+								<th>字段：<input type="text" class="form-control"
+									name="templateName" placeholder="请输入字段信息" /></th>
+							</tr>
+							<tr>
+								<th>字段：<input type="text" class="form-control"
+									name="templateName" placeholder="请输入字段信息" /></th>
+							</tr>
+						</table>
+						<div style="text-align: right;">
+							<a class="btn btn-success btn-xs" onclick="addModelMessage()">更多字段信息</a>
+							<a class="btn btn-warning btn-xs" onclick="addCodeModel()">提交</a>
+							<button class="btn btn-info btn-xs" type="reset">重置</button>
+							<button class="btn btn-info btn-xs" data-dismiss="modal">取消</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<!-- 查看模板 -->
+		<div class="modal fade" id="seeModel" tabindex="-1" role="dialog"
+			aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-camera"></i> 查看模板</strong>
+					</div>
+					<table class="table table-hover table-bordered table-responsive"
+						id="seeCodeModel_Table">
+						<tr>
+							<th><label class="col-sm-3 control-label">模板信息：</label></th>
+						</tr>
+					</table>
+				</div>
+				<div style="text-align: right;">
+					<button class="btn btn-success" data-dismiss="modal">确认</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 修改模板 -->
+	<div class="modal fade" id="editModel" tabindex="-1"
+		aria-labelledby="myModalLabel">
+		<form id="ModifyProCode_Form" class="form-horizontal">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-camera"></i> 修改模板</strong>
+					</div>
+					<table id="ModifyCodeModel_Table"
+						class="table table-hover table-bordered table-responsive">
+						<tr>
+							<th><label class="col-sm-4 control-label">二维码模板信息：</label></th>
+						</tr>
+					</table>
+				</div>
+				<div style="text-align: right;">
+					<a class="btn btn-warning" onclick="modifyCodeModel()">确认修改</a>
+					<button class="btn btn-info" data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- 生成二维码下载或查看框 -->
+	<div class="modal fade" id="DownloadModel" tabindex="-1"
+		aria-labelledby="myModalLabel" style="dispaly: none;">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<strong><i class="icon-camera"></i> 二维码信息</strong>
+				</div>
+			</div>
+			<div class="modal-body">
+				<label>二维码已生成成功，点击"下载"为立即下载已生成的二维码<br />点击"查看"为查看已生成的二维码！
+				</label>
+			</div>
+			<div style="text-align: right;" class="modal-footer">
+				<button class="btn btn-info" onclick="downloadCode()">下载</button>
+				<button class="btn btn-info" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>

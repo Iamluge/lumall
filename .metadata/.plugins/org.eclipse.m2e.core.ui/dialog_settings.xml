@@ -5,15 +5,15 @@
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
 			<item value="com.lumall"/>
-			<item value="com.github.pagehelper"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="e3-content-interface"/>
-			<item value="e3-content"/>
-			<item value="e3-content-service"/>
-			<item value="pagehelper"/>
+			<item value="e3-order-web"/>
+			<item value="e3-parent"/>
+			<item value="e3-order-interface"/>
+			<item value="e3-order"/>
+			<item value="e3-order-service"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -25,7 +25,6 @@
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
-			<item value="3.4.2-fix"/>
 		</list>
 	</section>
 	<section name="org.eclipse.m2e.core.pom.overview">
@@ -80,6 +79,14 @@
 	</section>
 	<section name="MavenModuleWizardParentPage">
 		<list key="moduleName">
+			<item value="e3-order-interface"/>
+			<item value="e3-order-service"/>
+			<item value="e3-cart-service"/>
+			<item value="e3-cart-interface"/>
+			<item value="e3-sso-interface"/>
+			<item value="e3-sso-service"/>
+			<item value="e3-search-service"/>
+			<item value="e3-search-interface"/>
 			<item value="e3-content-interface"/>
 			<item value="e3-content-service"/>
 			<item value="e3-manager-dao"/>
@@ -87,7 +94,6 @@
 			<item value="e3-manager-service"/>
 			<item value="e3-manager-pojo"/>
 			<item value="e3-manager-interface"/>
-			<item value="taotao-manager-interface"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -100,6 +106,10 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\javaee32\template-mars2\e3-order"/>
+			<item value="D:\javaee32\template-mars2\e3-cart"/>
+			<item value="D:\javaee32\template-mars2\e3-sso"/>
+			<item value="D:\javaee32\template-mars2\e3-portal-web\pom.xml"/>
 			<item value="D:\javaee32\template-mars2\e3-manager-web\pom.xml"/>
 			<item value="D:\javaee32\template-mars2\e3-parent\pom.xml"/>
 		</list>
@@ -114,13 +124,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="org.e3.content.interface"/>
 		</list>
 		<list key="groupId">
-			<item value="com.lumall"/>
 		</list>
 		<list key="artifactId">
-			<item value="e3-content-interface"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

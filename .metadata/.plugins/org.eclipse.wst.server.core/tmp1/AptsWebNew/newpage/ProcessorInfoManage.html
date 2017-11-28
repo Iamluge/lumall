@@ -1,0 +1,486 @@
+<meta charset="UTF-8">
+<div id="container">
+	<div class="row">
+		<div class="panel panel-default">
+			<!-- Default panel contents -->
+			<div class="panel-heading">
+				<strong style="font-size: 19px;"><i class="icon-list"></i>
+					流程操作</strong>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<div class="col-md-2">
+				<strong><i class="icon-list"></i>流程信息</strong><br /> <select
+					class="form-control" onchange="addProductToProcessor()"
+					id="selectProduct">
+					<option></option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<br /> <select id="selectProcessor"
+					onchange="submitProductProcessor(this.value)" class="form-control">
+					<option></option>
+				</select>
+			</div>
+			<br>
+			<div class="col-md-4">
+				<a type="button" class="btn btn-warning"
+					onclick="loadProductProcessor(addProductProcessorModal.id)">添加流程信息</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a type="button" class="btn btn-danger"
+					onclick="submitDeteleProcessor()">删除/批量删除流程信息</a>
+			</div>
+			<div class="col-md-4">
+				<label><span style="color: red;">提示：选中一个流程可设置其更多内容.....</span></label>
+			</div>
+			<table id="productProcessorInfoManage_Table"
+				class="table table-hover table-bordered table-responsive">
+				<tr class="active">
+					<th><input type="checkbox" name="code" onclick="checkAll()"
+						id="cameraCheck" /></th>
+					<th>标题</th>
+					<th>开始时间</th>
+					<th>结束时间</th>
+					<th>摘要</th>
+					<th>流程</th>
+					<th>操作</th>
+				</tr>
+			</table>
+		</div>
+		<!-- 增加产品流程信息 -->
+		<div class="modal fade" id="addProductProcessorModal" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-info"></i> 添加流程类型</strong>
+					</div>
+					<form id="addProductProcessor_form" class="form-horizontal">
+						<table class="table table-hover table-bordered table-responsive"
+							id="addProductProcessor_table">
+							<tr>
+								<th colspan="2"><label class="col-sm-3 control-label">流程信息：</label></th>
+							</tr>
+							<tr>
+								<td>产品：</td>
+								<td><select id="table_selectProdut"
+									onchange="addLoadProcessorByProduct(this.value)"><option></option>
+								</select></td>
+							</tr>
+							<tr>
+								<td>流程：</td>
+								<td><select id="table_selectProcessor"><option></option>
+								</select></td>
+							</tr>
+							<tr>
+								<td style="width: 20%;">标题：</td>
+								<td><input type="text" class="form-control"
+									style="width: 50%;" name="ProcessorTitle"
+									placeholder="请输入流程信息的标题" /></td>
+							</tr>
+							<tr>
+								<td>物流公司：</td>
+								<td><input type="text" class="form-control"
+									name="ProcessorLogistics" placeholder="请选择物流公司"
+									readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td>快递号：</td>
+								<td><input type="text" class="form-control"
+									name="ProcessorMailNum" placeholder="请填写快递号"
+									readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td>摘要：</td>
+								<td><textarea rows="5" cols="10" class="form-control"
+										name="ProcessorDescription" placeholder="请输入流程信息的摘要"></textarea></td>
+							</tr>
+							<tr>
+								<td>开始时间：</td>
+								<td><input type="text" class="form-control" id="startTime"
+									name="startTime" placeholder="请选择流程信息的开始时间" /></td>
+							</tr>
+							<tr>
+								<td>结束时间：</td>
+								<td><input type="text" class="form-control" id="endTime"
+									name="endTime" placeholder="请输入流程信息的结束时间" /></td>
+							</tr>
+						</table>
+						<div style="text-align: right;">
+							<a class="btn btn-info btn-xs" onclick="submitAddProcessor()">添加</a>
+							<button class="btn btn-info btn-xs" type="reset">重置</button>
+							<button class="btn btn-info btn-xs" data-dismiss="modal">取消</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 修改/查看产品流程信息 -->
+		<div class="modal fade" id="EditProductProcessorModal" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-content center-block" style="width: 500px;">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<strong><i class="icon-info"></i> 修改/查看流程类型</strong>
+					</div>
+					<form id="EditProductProcessor_form" class="form-horizontal">
+						<table class="table table-hover table-bordered table-responsive"
+							id="EditProductProcessor_table">
+							<tr>
+								<th colspan="2"><label class="col-sm-3 control-label">流程信息：</label></th>
+							</tr>
+							<tr>
+								<td>产品：</td>
+								<td><select id="table_editSelectProdut"
+									onchange="editLoadProcessorByProduct(this.value)"><option></option>
+								</select></td>
+							</tr>
+							<tr>
+								<td>流程：</td>
+								<td><select id="table_editSelectProcessor"><option></option>
+								</select></td>
+							</tr>
+							<tr>
+								<td style="width: 20%;">标题：</td>
+								<td><input type="text" class="form-control"
+									style="width: 50%;" name="editProcessorTitle"
+									placeholder="请输入流程信息的标题" /></td>
+							</tr>
+							<tr>
+								<td>物流公司：</td>
+								<td><input type="text" class="form-control"
+									name="editProcessorLogistics" placeholder="请选择物流公司"
+									readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td>快递号：</td>
+								<td><input type="text" class="form-control"
+									name="editProcessorMailNum" placeholder="请填写快递号"
+									readonly="readonly" /></td>
+							</tr>
+							<tr>
+								<td>摘要：</td>
+								<td><textarea rows="5" cols="10" class="form-control"
+										name="editProcessorDescription" placeholder="请输入流程信息的摘要"></textarea></td>
+							</tr>
+							<tr>
+								<td>开始时间：</td>
+								<td><input type="text" class="form-control"
+									id="edit_startTime" class="laydate-icon" name="editStartTime"
+									placeholder="请选择流程信息的开始时间" /></td>
+							</tr>
+							<tr>
+								<td>结束时间：</td>
+								<td><input type="text" class="form-control"
+									id="editendTime" class="laydate-icon" name="editEndTime"
+									placeholder="请输入流程信息的结束时间" /></td>
+							</tr>
+						</table>
+						<div style="text-align: right;">
+							<a class="btn btn-info btn-xs" onclick="submitEditProcessor()">修改</a>
+							<a class="btn btn-info btn-xs"
+								onclick="closeaddProductProcessorModal(EditProductProcessorModal.id)">取消</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ========================= 单个流程信息录入  ======================= -->
+	<div class="row">
+		<div class="col-md-12" style="display: none;" id="single_div">
+			<div class="col-md-2">
+				<select class="form-control" disabled="disabled"
+					onchange="singleSelectInfoType(this.value)"
+					id="single_selectProduct">
+					<option></option>
+				</select>
+			</div>
+			<div class="col-md-8">
+				<a type="button" id="singleAdd" class="btn btn-warning"
+					disabled="disabled"
+					onclick="single_addProcessorInfo(single_editOrSeeProcessorInfoManageModal.id)">添加</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a type="button" id="singleCustom" class="btn btn-info"
+					disabled="disabled"
+					onclick="initTemplateModel(single_templateProductProcessorModal.id)">自定义信息录入</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a type="button" id="singleDetele" class="btn btn-danger"
+					disabled="disabled" onclick="single_deleteProcessorInfoManage()">删除/批量删除</a>
+			</div>
+			<table id="single_productProcessorInfoManage_templateColumns"
+				class="table table-hover table-bordered table-responsive"
+				style="display: none;">
+				<tr class="active">
+					<th><input type="checkbox" name="code" onclick="checkAll()"
+						id="cameraCheck" /></th>
+					<th>标题</th>
+					<th>描述</th>
+					<th>操作</th>
+				</tr>
+			</table>
+			<table id="single_productProcessorInfoManage_otherColumns"
+				style="display: none;"
+				class="table table-hover table-bordered table-responsive">
+				<tr class="active">
+					<th><input type="checkbox" name="code" onclick="checkAll()"
+						id="cameraCheck" /></th>
+					<th>标题</th>
+					<th>描述</th>
+					<th>录入时间</th>
+					<th>类型</th>
+					<th>操作</th>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- ========================== 自定义模态框 ========================== -->
+	<div class="modal fade" id="single_templateProductProcessorModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>自定义信息录入</strong>
+				</div>
+			</div>
+			<div>
+				&nbsp;&nbsp;
+				<button class="btn btn-success btn-xs"
+					onclick="submitTemplateModel()">提交</button>
+				&nbsp;
+				<button class="btn btn-warning btn-xs"
+					onclick="resetTable(single_templateProductProcessorModal.id)">重置</button>
+				&nbsp;
+				<button class="btn btn-info btn-xs" onclick="newOneProcessorInfo()">新增一行</button>
+				&nbsp;
+				<button class="btn btn-info btn-xs" data-dismiss="modal">取消</button>
+			</div>
+			<table id="single_productProcessorInfoManage_templateTable"
+				class="table table-hover table-bordered table-responsive">
+				<tr class="active">
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!--============ 查看自定义信息 ======================= -->
+	<div class="modal fade" id="single_seeAddProcessorInfoManageModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 800px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>查看已录信息</strong>
+				</div>
+				<table class="table table-hover table-bordered table-responsive"
+					id="single_seeAddProcessorInfoManage_table">
+					<tr class="active">
+					</tr>
+				</table>
+				<div style="text-align: right;">
+					<a type="button" class="btn btn-info"
+						onclick="closeaddProductProcessorModal(single_seeAddProcessorInfoManageModal.id)">确认</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ================= 增加/修改/查看其它信息 ============== -->
+	<div class="modal fade" id="single_editOrSeeProcessorInfoManageModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 500px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>流程文字信息</strong>
+				</div>
+				<table class="table table-hover table-bordered table-responsive"
+					id="single_editOrSeeProcessorInfoManage_table">
+					<tr>
+						<th>标题</th>
+						<td><input type="text" class="form-control"
+							id="single_editOrSeeText" placeholder="输入文字信息标题" /> <input
+							type="hidden" id="uploadUrl" /></td>
+
+					</tr>
+					<tr>
+						<th>描述</th>
+						<td><textarea rows="5" cols="10" class="form-control"
+								id="single_editOrSeeTextarea" placeholder="输入文字信息的描述"></textarea></td>
+					</tr>
+				</table>
+				<div style="text-align: right;">
+					<a type="button" class="btn btn-info"
+						onclick="single_submitAddProcessorInfo()" disabled="disabled"
+						id="single_editOrSeeAddId">添加</a> <a type="button"
+						class="btn btn-warning" disabled="disabled"
+						id="single_editOrSeeEditId"
+						onclick="single_submitEditProcessorInfo()">修改</a> <a type="button"
+						class="btn btn-info" id="single_editOrSeeCallId"
+						onclick="closeaddProductProcessorModal(single_editOrSeeProcessorInfoManageModal.id)">取消</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================= 视频/图片上传及信息 ============================= -->
+	<div class="modal fade" id="single_uploadProcessorInfoManageModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 600px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>添加文件</strong>
+				</div>
+			</div>
+			<table class="table table-hover table-bordered table-responsive"
+				id="single_uploadProcessorInfoManage_table">
+				<tr>
+					<th>标题</th>
+					<td><input type="text" class="form-control"
+						id="single_uploadText" placeholder="输入图片信息标题"
+						onchange="BtnChange();" /></td>
+
+				</tr>
+				<tr>
+					<th>描述</th>
+					<td><textarea rows="5" cols="10" class="form-control"
+							id="single_uploadTextarea" placeholder="输入图片信息的描述"></textarea></td>
+				</tr>
+				<tr>
+					<th>上传文件</th>
+					<td><img alt="" src="" id="loadImage"
+						style="width: 450px; height: 300px;"> <br> <a id="OssuploadImageId"
+						type="button" class="btn btn-success" onclick="openOssupload();">选择文件</a></td>
+				</tr>
+			</table>
+			<div style="text-align: right;">
+				<button id="uploadInfoBtn" type="button" value="1"
+					class="btn btn-warning" onclick="addOrEditResourceUrl(this.value);"
+					disabled>添加</button>
+				<button type="reset" class="btn btn-info">重置</button>
+				<a type="button" class="btn btn-info" id="uploadChangeBtn"
+					onclick="closeaddProductProcessorModal(single_uploadProcessorInfoManageModal.id)">取消</a>
+			</div>
+		</div>
+	</div>
+	<!-- 上传图片模态框 -->
+	<div class="modal fade" id="OSSuploadModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 750px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>上传图片</strong>
+				</div>
+			</div>
+			<div id="container">
+				<a id="selectfiles" href="javascript:void(0);" class='btn uploadBtn'>选择文件</a>
+				<a id="postfiles" href="javascript:void(0);" class='btn uploadBtn'>开始上传</a>
+				<a href="#" class='btn btn-warning' onclick="clearUploadList();">清空上传列表</a>
+				<script type="text/javascript" src="../melon/fileInput/uploadImage.js"></script>
+			</div>
+
+			<h4>您所选择的文件列表：</h4>
+			<div id="ossfile">你的浏览器不支持flash,Silverlight或者HTML5！</div>
+			<div style="margin-left: 50px;">
+				<div style="text-align: right;">
+					<button id="uploadCancel" class="btn btn-info btn-xs"
+						data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 上传视频模态框 -->
+	<div class="modal fade" id="OSSuploadVedioModal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 750px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>上传视频</strong>
+				</div>
+			</div>
+			<div id="VedioContainer">
+				<a id="selectVedio" href="javascript:void(0);" class='btn uploadBtn'>选择文件</a>
+				<a id="postVedio" href="javascript:void(0);" class='btn uploadBtn'>开始上传</a>
+				<a href="#" class='btn btn-warning' onclick="clearUploadList();">清空上传列表</a>
+				<script type="text/javascript"
+					src="../melon/fileInput/uploadVedio.js"></script>
+			</div>
+
+			<h4>您所选择的文件列表：</h4>
+			<div id="ossVedio">你的浏览器不支持flash,Silverlight或者HTML5！</div>
+			<div style="margin-left: 50px;">
+				<div style="text-align: right;">
+					<button id="uploadVedioCancel" class="btn btn-info btn-xs"
+						data-dismiss="modal">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 查看/修改流程图片模态框 -->
+	<div class="modal fade"
+		id="findOrEdit_single_uploadProcessorInfoManageModal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 600px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>图片信息</strong>
+				</div>
+			</div>
+			<table class="table table-hover table-bordered table-responsive"
+				id="findOrEdit_single_uploadProcessorInfoManage_table">
+				<tr>
+					<th>标题</th>
+					<td><input type="text" class="form-control"
+						id="findOrEdit_single_uploadText" placeholder="输入图片标题"
+						onchange="BtnChange();" /></td>
+
+				</tr>
+				<tr>
+					<th>描述</th>
+					<td><textarea rows="5" cols="10" class="form-control"
+							id="findOrEdit_single_uploadTextarea" placeholder="输入图片描述"></textarea></td>
+				</tr>
+				<tr>
+					<th>图片</th>
+					<td><img alt="" src="" id="findOrEditloadImage"
+						style="width: 450px; height: 300px;"> <br></td>
+				</tr>
+			</table>
+			<div style="text-align: right;">
+				<button id="findOrEdit_uploadInfoBtn" type="button" value="2"
+					class="btn btn-warning" onclick="addOrEditResourceUrl(this.value);"
+					disabled>修改</button>
+				<button type="button" class="btn btn-info" id="changeBtn"
+					onclick="closeaddProductProcessorModal(findOrEdit_single_uploadProcessorInfoManageModal.id)"></button>
+			</div>
+		</div>
+	</div>
+	<!-- 查看/修改流程视频模态框 -->
+	<div class="modal fade" id="findOrEdit_single_uploadVedioModal"
+		tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-content center-block" style="width: 600px;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<strong><i class="icon-info"></i>视频信息</strong>
+				</div>
+			</div>
+			<table class="table table-hover table-bordered table-responsive"
+				id="findOrEdit_single_uploadVedio_table">
+				<tr>
+					<th>标题</th>
+					<td><input type="text" class="form-control"
+						id="findOrEdit_single_uploadVedioText" placeholder="输入视频标题"
+						onchange="BtnChange();" /></td>
+
+				</tr>
+				<tr>
+					<th>描述</th>
+					<td><textarea rows="5" cols="10" class="form-control"
+							id="findOrEdit_single_uploadVedioTextarea" placeholder="输入视频描述"></textarea></td>
+				</tr>
+				<tr>
+					<th>视频</th>
+					<td><p>已上传了视频</p></td>
+				</tr>
+			</table>
+			<div style="text-align: right;">
+				<button id="findOrEdit_uploadVedioInfoBtn" type="button"
+					class="btn btn-warning" onclick="single_submitEditProcessorInfo();">修改</button>
+				<button type="button" class="btn btn-info" id="VediochangeBtn"
+					onclick="closeaddProductProcessorModal(findOrEdit_single_uploadVedioModal.id)">取消</button>
+			</div>
+		</div>
+	</div>
+</div>

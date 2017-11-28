@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+	<package name="resourceUrl" namespace="/resourceUrl" extends="mypackage">
+	
+		<action name="deleteResourceOSSUrl" class="resourceUrlAction"
+			method="deleteResourceOSSUrl">
+			<result type="json">
+				<param name="root">resourceUrlLsit</param>
+			</result>
+		</action>
+		
+		<action name="findResourceOSSUrl" class="resourceUrlAction"
+			method="findResourceOSSUrl">
+			<result type="json">
+				<param name="root">resourceUrlLsit</param>
+			</result>
+		</action>
+		
+		<action name="addUploadProcessorInfo" class="resourceUrlAction"
+			method="addUploadProcessorInfo">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="findResourceUrlByProcessorInfoId" class="resourceUrlAction"
+			method="findResourceUrlByProcessorInfoId">
+			<result type="json">
+				<param name="root">resourceUrlLsit</param>
+			</result>
+		</action>
+		
+		<action name="findUrlByTypeAndProcInfo" class="resourceUrlAction"
+			method="findUrlByTypeAndProcInfo">
+			<result type="json">
+				<param name="root">resourceUrlLsit</param>
+			</result>
+		</action>
+		
+		<action name="editResourceUrl" class="resourceUrlAction"
+			method="editResourceUrl">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="deleteResourceUrl" class="resourceUrlAction"
+			method="deleteResourceUrl">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		<action name="addResourceUrl" class="resourceUrlAction"
+			method="addResourceUrl">
+			<result type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+
+	</package>
+
+</struts>

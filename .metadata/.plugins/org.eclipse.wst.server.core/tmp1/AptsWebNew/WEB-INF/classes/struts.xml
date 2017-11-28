@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+    
+<struts>
+	
+  
+  <!-- 默认的配置包 -->
+  <package name="mypackage" extends="json-default,struts-default">
+  	 <!-- 用户验证 -->
+     <!-- <action name="loginaction" class="loginaction" method="findsysUser">
+     	<result name="error">/LoginError.jsp</result>
+     	<result name="success">/Mainframe.jsp</result>
+     </action> -->
+     
+  </package>
+  <include file="company_struts.xml" />
+  <include file="sysUser_struts.xml" />
+  <include file="productCategory_struts.xml"/>
+  <include file="proCategory_struts.xml" />
+  <include file="upload_struts.xml" />
+  <include file="product_struts.xml" />
+  <include file="processorInfo_struts.xml" />
+  <include file="resourceUrl_struts.xml" />
+  <include file="proInfoTempalte_struts.xml" />
+  <include file="proInfoIndex_struts.xml" />
+  <include file="createCode_struts.xml" />
+  <include file="sysPower_struts.xml" />
+  <include file="sysRole_struts.xml" />
+  <include file="material_struts.xml" />
+  <include file="camera_struts.xml" />
+  <include file="productionPlan.xml" />
+  <include file="prodPlanMater_struts.xml" />
+  <include file="productionPlanMaterial_struts.xml" />
+  <include file="index_struts.xml" />
+  
+</struts>
+	

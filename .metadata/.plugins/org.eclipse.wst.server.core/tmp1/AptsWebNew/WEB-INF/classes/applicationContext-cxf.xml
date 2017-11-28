@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="  http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://cxf.apache.org/jaxws 
+        http://cxf.apache.org/schemas/jaxws.xsd">
+
+ <!-- <import resource="classpath:META-INF/cxf/cxf.x19ml" />
+	<import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />  -->
+	
+	<bean id="addHeaderInterceptor" class="org.jyu.apts.cxf.intercept.AddHeaderInterceptor">
+	    <property name="uId" value="aptsuser" />
+	    <property name="uPassword" value="user601" />
+	</bean>
+
+	<jaxws:client id="netWebService" serviceClass="org.jyu.apts.webservice.NetWebService"
+		address="http://localhost:8080/AptsServer/ws/NetWebService">
+	    <!-- <jaxws:outInterceptors>
+	         <ref bean="addHeaderInterceptor"/>
+	    </jaxws:outInterceptors>-->
+	</jaxws:client>
+
+</beans>

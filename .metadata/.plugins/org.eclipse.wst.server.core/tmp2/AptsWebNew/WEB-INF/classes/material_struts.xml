@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<struts>
+
+
+	<package name="material" namespace="/mater" extends="mypackage">
+	   <action name="addMater" class="materialAction" method="addMater">
+			<result name="success" type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		
+		
+		<!-- 住处所有的材料，不是树的形式 -->
+		<action name="findAllMaterByProductId" class="materialAction" method="findAllMaterByProductId">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		
+		<action name="findMaterialByProductionAndProcess" class="materialAction" method="findMaterialByProductionAndProcess">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		
+		
+		
+		<action name="findByProdId" class="materialAction" method="findByProdId">
+			<result name="success" type="json">
+				<param name="root">materJson</param>
+			</result>
+		</action>
+		<action name="updateMater" class="materialAction" method="updateMater">
+			<result name="success" type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+		<action name="delMater" class="materialAction" method="delMater">
+			<result name="success" type="json">
+				<param name="root">extMessage</param>
+			</result>
+		</action>
+	</package>
+</struts>
+
+
+
